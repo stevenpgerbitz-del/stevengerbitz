@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1b1d20">
+<meta name="description" content="Steven Gerbitz — IT support, telecommunications, technical quality and practical problem-solving.">
+<title>Steven Gerbitz — Professional Portfolio (Design Preview)</title>
+<style>
+:root{--coal:#1b1d20;--coal-2:#23262a;--cream:#f1eee7;--cream-2:#e9e3d9;--red:#95484d;--red-light:#cc9693;--ink:#292c30;--muted:#5a5c60;--dark-text:#dedcda;--serif:Georgia,Cambria,"Times New Roman",serif;--sans:"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--cream);font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,summary:focus-visible{outline:3px solid #d7986a;outline-offset:5px}
+.wrap{max-width:1040px;width:calc(100% - 64px);margin-inline:auto}
+.skip{position:absolute;left:14px;top:-100px;background:var(--cream);color:var(--ink);padding:8px 14px;z-index:10}.skip:focus{top:14px}
+header{background:var(--coal);color:#efeae3;border-bottom:1px solid #35383c}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}
+.brand{font:700 16px/1.15 var(--sans);letter-spacing:.025em;white-space:nowrap}.brand span{display:block;font:600 9px/1.6 var(--sans);color:#ada9a8;letter-spacing:.2em;text-transform:uppercase;margin-top:5px}
+nav{display:flex;gap:27px;align-items:center;flex-wrap:wrap}nav a{color:#c6c2c0;font-size:12px;font-weight:600;letter-spacing:.035em}nav a:hover{color:#fff}
+.hero{background:var(--coal);color:#f5f1ea;padding:118px 0 122px}
+.eyebrow{color:var(--red-light);font-weight:700;letter-spacing:.17em;text-transform:uppercase;font-size:11px;margin:0 0 24px}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.032em}
+h1{font-size:clamp(4rem,9vw,7rem);line-height:1.04;margin:0 0 27px}
+.hero .rule{width:72px;height:3px;background:var(--red);margin:0 0 26px}
+.hero .intro{font:400 clamp(1.18rem,2.1vw,1.55rem)/1.53 var(--sans);max-width:680px;color:#d5d2cf;margin:0 0 29px}
+.hero .sub{max-width:690px;font-size:15px;color:#bcbab9;line-height:1.8;margin:0}
+.text-link{display:inline-flex;align-items:center;gap:13px;margin-top:31px;border-bottom:1px solid currentColor;padding-bottom:5px;color:#efe1db;font-size:13px;font-weight:700;letter-spacing:.03em}.text-link:hover{color:white}
+.section{padding:100px 0;border-top:1px solid #d3cbc1}
+.section-grid{display:grid;grid-template-columns:230px minmax(0,1fr);gap:76px}
+.section-label{color:var(--red);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:750;margin:8px 0}
+h2{font-size:clamp(2.3rem,4.2vw,3.5rem);line-height:1.14;margin-bottom:24px;color:var(--ink)}
+.prose{max-width:670px;color:#4a4a4c;font-size:16px;line-height:1.92}
+.prose p{margin:0 0 17px}.prose p:last-child{margin-bottom:0}
+.focus-list{display:grid;margin-top:34px;border-top:1px solid #d1c8bb;max-width:700px}
+.focus-row{padding:17px 0;border-bottom:1px solid #d1c8bb;display:grid;grid-template-columns:35px 1fr;gap:11px;align-items:start;font-size:14px;color:#424346}
+.focus-row b{color:var(--red);font:400 18px var(--serif)}
+.section-small-heading{display:flex;justify-content:space-between;align-items:baseline;gap:25px;margin-bottom:30px}
+.section-small-heading h2{margin:0}
+.career{background:#eae5db}
+.career-list{border-top:1px solid #c8c1b8}
+.career-item{display:grid;grid-template-columns:170px 1fr;gap:26px;padding:26px 0;border-bottom:1px solid #c8c1b8}
+.career-item time{font-size:12px;letter-spacing:.015em;color:#7b5051;font-weight:700;padding-top:5px}
+.career-item h3{font-family:var(--serif);font-size:25px;line-height:1.25;font-weight:400;margin:0 0 5px}
+.career-item .role{color:#56595c;font-size:13px;margin:0 0 8px}
+.career-item .detail{color:#5c5e61;font-size:14px;line-height:1.75;margin:0;max-width:650px}
+.details-wrap{margin-top:24px}
+details summary{cursor:pointer;font-size:13px;font-weight:700;color:#783a40;list-style:none;padding:11px 0;display:inline-block;border-bottom:1px solid #a9787c}
+details summary::-webkit-details-marker{display:none}
+details summary:after{content:" +";font-size:16px}
+details[open] summary:after{content:" −"}
+.earlier-roles{padding:14px 0 0;color:#5b5e60;font-size:14px;line-height:1.9}
+.projects{background:var(--coal);color:#e7e2de;border-color:#32363b}
+.projects h2{color:#f1e9e0}.projects .section-label{color:#d2a09b}
+.projects-lede{max-width:720px;color:#bfbab7;font-size:15px;margin:0 0 26px}
+.project-line{border-top:1px solid #48494c;padding:25px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,1.2fr);gap:30px;align-items:baseline}
+.project-line:last-of-type{border-bottom:1px solid #48494c}
+.project-line h3{font:400 25px/1.2 var(--serif);margin:0;color:#f1e9e1}
+.project-line p{font-size:14px;color:#c6c1be;line-height:1.7;margin:0}
+.projects-note{margin:26px 0 0;color:#a9a5a2;font-size:12px;max-width:740px;line-height:1.85}
+.values{padding:80px 0 90px}
+.values blockquote{max-width:810px;margin:0;font:italic 400 clamp(1.6rem,3.9vw,2.75rem)/1.4 var(--serif);color:#63363d}
+.values .foot{font-size:14px;margin-top:22px;color:#56595b}
+footer{background:#17191c;color:#c1bdbb}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:29px 0}
+.footer-inner strong{font-size:13px;color:#f4eee5}
+.footer-inner span{font-size:12px}
+@media(max-width:800px){.hero{padding:88px 0 94px}.section{padding:70px 0}.section-grid{grid-template-columns:160px 1fr;gap:34px}.career-item{grid-template-columns:130px 1fr;gap:16px}}
+@media(max-width:600px){.wrap{width:calc(100% - 36px)}.header-inner{align-items:flex-start;flex-direction:column;padding:19px 0 16px;gap:13px}nav{gap:19px}nav a{font-size:12px}.hero{padding:74px 0 80px}h1{font-size:clamp(3.4rem,13vw,5.1rem);margin-bottom:24px}.eyebrow{font-size:10px;letter-spacing:.1em}.hero .intro{font-size:1.18rem}.section{padding:61px 0}.section-grid{grid-template-columns:1fr;gap:14px}.section-label{margin-bottom:4px}h2{font-size:2.45rem}.career-item{grid-template-columns:1fr;gap:5px;padding:23px 0}.career-item h3{font-size:23px}.project-line{grid-template-columns:1fr;gap:9px}.values{padding:64px 0}.footer-inner{align-items:start;flex-direction:column;gap:4px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header><div class="wrap header-inner">
+  <a class="brand" href="#top">Steven Gerbitz<span>Professional Portfolio</span></a>
+  <nav aria-label="Main navigation"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#values">Values</a></nav>
+</div></header>
+<main id="main">
+<section class="hero" id="top"><div class="wrap">
+  <p class="eyebrow">IT support / Telecommunications / Quality & mentoring</p>
+  <h1>Steven Gerbitz.</h1>
+  <div class="rule" aria-hidden="true"></div>
+  <p class="intro">Technology professional. Hands-on experience. Practical perspective.</p>
+  <p class="sub">For more than 20 years, I've solved technical problems, supported people, and helped make complex technology work in the real world.</p>
+  <a class="text-link" href="#experience">Explore my experience <span aria-hidden="true">↘</span></a>
+</div></section>
+
+<section class="section" id="about"><div class="wrap section-grid">
+  <p class="section-label">01 / About</p>
+  <div>
+    <h2>Experience that<br>goes beyond a job title.</h2>
+    <div class="prose">
+      <p>My career spans enterprise IT, education technology, fiber installations, and wireless communications. I've worked at desks, on rooftops, at customer sites, and alongside the technicians learning the trade.</p>
+      <p>I believe good technical work comes down to understanding the problem, doing the job properly, and sharing what you've learned.</p>
+    </div>
+    <div class="focus-list" aria-label="Professional focus">
+      <div class="focus-row"><b>01</b><span>Solving difficult technical problems</span></div>
+      <div class="focus-row"><b>02</b><span>Improving quality and documentation</span></div>
+      <div class="focus-row"><b>03</b><span>Helping others build practical skills</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section career" id="experience"><div class="wrap">
+  <p class="section-label">02 / Experience</p>
+  <div class="section-small-heading"><h2>Selected experience.</h2></div>
+  <div class="career-list">
+    <article class="career-item"><time datetime="2025">2025 — Present</time><div><h3>Des Moines Public Schools</h3><p class="role">Information Technology Specialist</p><p class="detail">Frontline technology support for elementary schools, including device troubleshooting, management tools, and district technology deployments.</p></div></article>
+    <article class="career-item"><time datetime="2019">2019 — 2025</time><div><h3>Vantage Point Solutions</h3><p class="role">Integration Services Technician / Fiber Technician</p><p class="detail">Residential and business fiber installations across 27 states, with detailed quality checks and one-on-one field guidance for approximately 15 technicians.</p></div></article>
+    <article class="career-item"><time datetime="2015">2015 — 2019</time><div><h3>Peabody Energy</h3><p class="role">Onsite Support Specialist — IT</p><p class="detail">Enterprise hardware and software troubleshooting across three mining operations, plus workstation deployment, scripting, and IT documentation.</p></div></article>
+    <article class="career-item"><time datetime="2010">2010 — 2015</time><div><h3>Visionary & Collins Communications</h3><p class="role">Broadband Support / Field Installations</p><p class="detail">DSL and wireless broadband support, customer installations, tower and remote relay-site work, and service quality improvements.</p></div></article>
+  </div>
+  <div class="details-wrap"><details><summary>Earlier career and additional experience</summary><div class="earlier-roles">MetroNet — Fiber Technician (2025)<br>GoDaddy — Advanced Hosting & Technical Support (2009–2010)<br>Ameritraining / AT&amp;T U-verse — Tier II Technical Support (2007–2009)<br>The Salvation Army — IT Field Technician (2005–2006)</div></details></div>
+</div></section>
+
+<section class="section projects" id="projects"><div class="wrap">
+  <p class="section-label">03 / Projects</p>
+  <h2>Built around real needs.</h2>
+  <p class="projects-lede">Independent projects shaped by practical problems, a focus on usability, and collaborative AI-assisted development.</p>
+  <div class="project-line"><h3>Addicted to Karaoke</h3><p>A community platform connecting singers, karaoke hosts, and venues.</p></div>
+  <div class="project-line"><h3>Cents Happens</h3><p>A personal finance application designed to help manage bills, budgets, and planning.</p></div>
+  <div class="project-line"><h3>Garage Buddy & utility apps</h3><p>Vehicle tracking and Android utility projects focused on useful, straightforward everyday experiences.</p></div>
+  <p class="projects-note">My role includes defining requirements, planning experiences, reviewing implementation, and hands-on testing. Development is collaborative and AI-assisted.</p>
+</div></section>
+
+<section class="section values" id="values"><div class="wrap">
+  <p class="section-label">04 / Values</p>
+  <blockquote>“Integrity First. Service Before Self.<br>Excellence in All We Do.”</blockquote>
+  <p class="foot">United States Air Force core values that continue to inform the way I work.</p>
+</div></section>
+</main>
+<footer><div class="wrap footer-inner"><strong>Steven Gerbitz</strong><span>Technology · Service · Experience</span></div></footer>
+</body></html>

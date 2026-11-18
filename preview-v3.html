@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1c1d20">
+<meta name="description" content="Steven Gerbitz. Two decades of practical experience in IT support, fiber communications, troubleshooting, technical quality, and mentoring.">
+<meta property="og:title" content="Steven Gerbitz — Technology Built on Experience">
+<meta property="og:description" content="IT support, fiber communications, field experience, and a commitment to doing the job right.">
+<meta property="og:type" content="website">
+<title>Steven Gerbitz | Technology Built on Experience — Design Three</title>
+<style>
+:root{--dark:#1c1d20;--dark2:#252529;--cream:#f4eee4;--paper:#eee6d9;--ink:#26272a;--burgundy:#963e46;--burgundy-soft:#c78888;--gold:#c8ac87;--light:#ded9d3;--line:#d2c8bb;--display:Georgia,Cambria,"Times New Roman",serif;--ui:"Segoe UI",Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--ui);line-height:1.67;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #eeaa77;outline-offset:4px}
+button{cursor:pointer}
+.container{width:min(1130px,calc(100% - 56px));margin-inline:auto}
+.skip{position:absolute;left:12px;top:-120px;background:var(--cream);color:#1a1b1e;padding:10px;z-index:1000}.skip:focus{top:12px}
+.mini-rule{display:inline-block;width:27px;height:1px;background:currentColor;margin-right:10px;vertical-align:middle}
+.site-header{background:#191a1d;color:#f1e7df;border-bottom:1px solid #414047;position:sticky;top:0;z-index:90}
+.header-in{height:78px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{display:flex;gap:11px;align-items:center;line-height:1.1}
+.brand-symbol{position:relative;display:grid;place-items:center;width:42px;height:42px;border:1px solid #a16d72;color:#f0ded0;font:italic 22px var(--display);letter-spacing:-.08em}
+.brand-symbol:after{content:"";position:absolute;inset:4px;border:1px solid #62545a;pointer-events:none}
+.brand-name{font-size:15px;letter-spacing:.035em;font-weight:750}
+.brand-tag{display:block;font-size:8px;letter-spacing:.19em;margin-top:6px;color:#c7a2a0;font-weight:800}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#d3ceca;font-weight:750;transition:color .2s}
+.nav a:hover{color:white}
+.nav a.last{border:1px solid #a0696c;padding:10px 14px;color:#f4ded9}
+.nav a.last:hover{background:#8f424b}
+.menu{display:none;align-items:center;gap:10px;background:transparent;color:#eee8e3;border:1px solid #726568;border-radius:3px;padding:9px 11px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.menu .hamb{display:block;width:18px;height:11px;border-top:2px solid currentColor;border-bottom:2px solid currentColor;position:relative}
+.menu .hamb:after{content:"";position:absolute;left:0;top:4px;width:18px;border-top:2px solid currentColor}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 74% 52%,#393038 0%,#26252a 40%,#1c1d20 81%);color:#f5eee3}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(to right,#ffffff08 1px,transparent 1px),linear-gradient(to bottom,#ffffff08 1px,transparent 1px);background-size:53px 53px;mask-image:linear-gradient(to left,#000,transparent 90%);opacity:.8}
+.hero::after{content:"";position:absolute;z-index:-1;left:-140px;bottom:-230px;width:460px;height:460px;border:1px solid #6a4a4b;border-radius:50%;box-shadow:0 0 0 85px #ffffff04,0 0 0 165px #ffffff03;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(310px,.88fr);gap:35px;align-items:center;padding:92px 0 76px}
+.eyebrow{margin:0;color:#dfac9e;text-transform:uppercase;letter-spacing:.19em;font-size:11px;font-weight:800;line-height:1.7}
+h1,h2,h3,p{overflow-wrap:break-word}
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:-.043em;line-height:1.08}
+h1{font-size:clamp(4.2rem,8.1vw,7.65rem);margin:25px 0 26px;line-height:.98}
+h1 .last-name{display:block;color:#e4b7af;font-style:italic;font-weight:400}
+.hero-intro{color:#f3ebe2;font-size:clamp(1.23rem,2vw,1.57rem);max-width:580px;line-height:1.45;margin:0 0 18px;font-weight:500}
+.hero-summary{color:#c8c3c0;font-size:15px;line-height:1.83;max-width:540px;margin:0 0 30px}
+.cta{display:inline-flex;align-items:center;gap:25px;min-height:50px;padding:0 0 0 20px;background:var(--burgundy);color:white;font-weight:750;font-size:12px;letter-spacing:.05em;border:1px solid #b36467;transition:background .2s,transform .2s}
+.cta span{display:grid;place-items:center;width:50px;align-self:stretch;border-left:1px solid #bb7678;font-size:22px;font-weight:400}
+.cta:hover{background:#ae4b54;transform:translateY(-2px)}
+.hero-kicker{margin:24px 0 0;font-size:11px;color:#bfb7b3;letter-spacing:.055em}
+.hero-visual{position:relative;min-height:410px;display:grid;place-items:center}
+.visual-outline{position:absolute;inset:11px 0;border:1px solid #80676b66;clip-path:polygon(0 0,40% 0,40% 2px,100% 2px,100% 100%,0 100%)}
+.hero-visual svg{display:block;width:100%;max-width:500px;height:auto;overflow:visible}
+.hero-visual .v-label{font:700 10px var(--ui);letter-spacing:2px;fill:#d5c2ba}
+.hero-visual .v-title{font:italic 65px var(--display);fill:#f1e8dc}
+.hero-visual .v-sub{font:700 13px var(--ui);letter-spacing:2px;fill:#dbc1b5}
+.hero-visual .v-stroke{fill:none;stroke:#a57c7e}
+.hero-visual .v-node{fill:#d6b3a5}
+.hero-visual .v-dot{fill:#eed6a9}
+.visual-caption{position:absolute;right:10px;bottom:9px;font-size:10px;color:#c7a2a2;letter-spacing:.16em;text-transform:uppercase}
+.milestones{background:#302a2e;color:#e8ded6;border-top:1px solid #654b4f;border-bottom:1px solid #654b4f}
+.milestone-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.milestone{display:flex;gap:19px;align-items:center;padding:25px 17px 25px 0}
+.milestone:not(:last-child){border-right:1px solid #615156;margin-right:17px}
+.milestone strong{font:italic 42px/.95 var(--display);color:#efd0bd;font-weight:400;white-space:nowrap}
+.milestone span{font-size:12px;line-height:1.5;color:#d0c1bd;max-width:165px}
+.section{padding:94px 0}
+.section-tag{color:#8d4249;font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase;margin:0 0 21px}
+.section-tag.light{color:#dfa39e}
+.section-heading{font-size:clamp(2.5rem,4.7vw,4.1rem);margin:0 0 29px;max-width:750px}
+.section-heading em{color:#95484f;font-weight:400}
+.about{background:var(--cream);background-image:radial-gradient(#9a7b5e19 .6px,transparent .7px);background-size:8px 8px}
+.about-layout{display:grid;grid-template-columns:1.2fr .7fr;gap:14%;align-items:start}
+.body-copy{font-size:16px;line-height:1.92;color:#4c4b4d;max-width:650px}
+.body-copy p{margin:0 0 17px}
+.signature{border-left:2px solid var(--burgundy);padding:11px 0 12px 26px;margin-top:35px}
+.signature p{font:italic 30px/1.4 var(--display);color:#6b3b41;margin:0 0 12px}
+.signature small{font-size:11px;color:#6d5d5b;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.focus{padding-top:68px}
+.focus-head{font-size:10px;color:#8b4c50;font-weight:800;text-transform:uppercase;letter-spacing:.2em;margin-bottom:16px}
+.focus-row{padding:17px 0;border-top:1px solid #c7bbab;display:flex;gap:13px;align-items:start}
+.focus-row:last-child{border-bottom:1px solid #c7bbab}
+.focus-row b{font:italic 21px var(--display);color:#995057;min-width:30px}
+.focus-row span{font-weight:600;font-size:14px;line-height:1.6;color:#3f4044}
+.experience{background:#e7e0d4}
+.experience-head{display:flex;gap:30px;justify-content:space-between;align-items:end;margin-bottom:34px}
+.experience-head p{font-size:14px;color:#5b5858;max-width:310px;margin-bottom:6px;line-height:1.75}
+.experience-head .section-heading{margin-bottom:0}
+.timeline{border-top:1px solid #bdafa2}
+.job{display:grid;grid-template-columns:160px 1fr;gap:25px;padding:26px 0;border-bottom:1px solid #bdafa2}
+.job-date{font-size:12px;font-weight:800;color:#8a464c;padding-top:5px;letter-spacing:.03em}
+.job h3{font:400 25px/1.2 var(--display);letter-spacing:-.018em;margin:0 0 7px}
+.job .role{font-size:12px;color:#7a4a4e;font-weight:750;letter-spacing:.045em;margin:0 0 7px;text-transform:uppercase}
+.job .desc{font-size:14px;line-height:1.75;color:#58595c;margin:0;max-width:700px}
+details{margin-top:25px}
+details summary{list-style:none;display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:750;color:#763c43;cursor:pointer;border-bottom:1px solid #9c7172;padding-bottom:7px}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";font-size:20px;font-weight:400}
+details[open] summary::before{content:"−"}
+.earlier{padding:16px 0 0 32px;font-size:13px;line-height:2;color:#4c4f53}
+.projects{background:#202125;color:#eae2da}
+.projects .section-heading{color:#f3e9dd}
+.projects .section-heading em{color:#e2aba6}
+.project-list{border-top:1px solid #525057}
+.project{display:grid;grid-template-columns:60px 1fr 1.15fr;gap:16px;padding:29px 0;border-bottom:1px solid #525057;align-items:start}
+.project-index{font:italic 22px var(--display);color:#c28b85}
+.project h3{font:400 27px var(--display);letter-spacing:-.015em;margin:0 0 5px;color:#f5e9de}
+.project p{font-size:14px;color:#c8c3c0;line-height:1.8;margin:0}
+.project-note{font-size:12px;line-height:1.7;color:#aba8a6;margin:25px 0 0;max-width:830px}
+.values{padding:87px 0 90px;background:var(--paper)}
+.values-layout{display:grid;grid-template-columns:200px 1fr;gap:55px}
+.values blockquote{font:italic 400 clamp(1.75rem,3.5vw,3rem)/1.38 var(--display);color:#713c42;margin:0}
+.values p.note{font-size:14px;color:#55555a;margin:21px 0 0}
+footer{background:#161719;color:#c5bfbb}
+.footer-inner{display:flex;align-items:center;gap:15px;justify-content:space-between;padding:28px 0}
+.footer-inner strong{color:#f4e9db;font-size:13px}
+.footer-inner span{font-size:12px}
+@media(max-width:940px){
+ .hero-inner{grid-template-columns:1.1fr .9fr;gap:5px;padding:67px 0 59px}
+ .hero-visual{min-height:350px}
+ h1{font-size:clamp(3.6rem,8.3vw,6rem)}
+ .about-layout{gap:7%}
+ .focus{padding-top:45px}
+ .milestone{gap:13px}
+}
+@media(max-width:720px){
+ html{scroll-padding-top:69px}
+ .container{width:calc(100% - 38px)}
+ .header-in{height:69px}
+ .brand-symbol{width:38px;height:38px}
+ .brand-name{font-size:14px}
+ .menu{display:flex}
+ .nav{display:none;position:absolute;left:0;right:0;top:100%;padding:12px 19px 18px;background:#272529;border-bottom:1px solid #695359;box-shadow:0 12px 18px #0007}
+ .nav.open{display:flex;flex-direction:column;gap:0;align-items:stretch}
+ .nav a{padding:12px 6px;border-bottom:1px solid #4d464b;font-size:13px}
+ .nav a.last{margin-top:12px;text-align:center}
+ .hero-inner{grid-template-columns:1fr;gap:5px;padding:53px 0 33px}
+ .hero-copy{position:relative;z-index:1}
+ h1{font-size:clamp(4rem,11.8vw,6rem);margin:15px 0 20px}
+ .hero-intro{font-size:1.25rem;max-width:620px}
+ .hero-summary{font-size:14px;line-height:1.7;margin-bottom:23px}
+ .hero-visual{min-height:240px;margin-top:11px}
+ .hero-visual svg{width:min(100%,380px)}
+ .visual-caption{right:0;bottom:0;font-size:9px}
+ .milestone{margin-right:8px!important;gap:8px;padding:18px 9px 18px 0}
+ .milestone strong{font-size:30px}
+ .milestone span{font-size:10px}
+ .section{padding:65px 0}
+ .about-layout{grid-template-columns:1fr;gap:12px}
+ .focus{padding-top:12px}
+ .experience-head{display:block}
+ .experience-head p{max-width:540px;margin-top:15px}
+ .values-layout{grid-template-columns:1fr;gap:3px}
+ .project{grid-template-columns:43px 1fr;gap:10px}
+ .project p{grid-column:2}
+}
+@media(max-width:430px){
+ .container{width:calc(100% - 34px)}
+ .eyebrow{font-size:9px;letter-spacing:.115em}
+ h1{font-size:clamp(3.5rem,14vw,4.2rem);letter-spacing:-.055em}
+ .hero-intro{font-size:1.15rem}
+ .hero-visual{min-height:212px}
+ .hero-visual svg{width:min(100%,320px)}
+ .visual-caption{display:none}
+ .milestone-grid{grid-template-columns:1fr 1fr 1fr}
+ .milestone{flex-direction:column;align-items:start;padding:15px 4px 15px 0;gap:3px}
+ .milestone:not(:last-child){margin-right:9px}
+ .milestone strong{font-size:32px}
+ .milestone span{font-size:10px}
+ .section-heading{font-size:2.4rem}
+ .job{grid-template-columns:1fr;gap:5px;padding:22px 0}
+ .job h3{font-size:23px}
+ .job-date{padding:0}
+ .project{grid-template-columns:35px 1fr;gap:8px}
+ .project h3{font-size:24px}
+ .footer-inner{align-items:start;flex-direction:column;gap:4px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="container header-in">
+  <a class="brand" href="#top" aria-label="Steven Gerbitz home"><span class="brand-symbol" aria-hidden="true">SG</span><span><span class="brand-name">STEVEN GERBITZ</span><span class="brand-tag">TECHNOLOGY · EXPERIENCE · INTEGRITY</span></span></a>
+  <button class="menu" type="button" aria-expanded="false" aria-controls="nav"><span class="hamb" aria-hidden="true"></span> Menu</button>
+  <nav class="nav" id="nav" aria-label="Main navigation"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#values">Values</a><a class="last" href="#experience">Explore my career ↗</a></nav>
+ </div>
+</header>
+<main id="main">
+<section id="top" class="hero" aria-labelledby="hero-title">
+ <div class="container hero-inner">
+  <div class="hero-copy">
+   <p class="eyebrow"><span class="mini-rule"></span> IT SUPPORT · FIBER · TECHNICAL QUALITY</p>
+   <h1 id="hero-title">Steven <span class="last-name">Gerbitz.</span></h1>
+   <p class="hero-intro">Experience you can put to work.</p>
+   <p class="hero-summary">More than two decades of solving technical problems, supporting people, and taking pride in work done right — from enterprise IT to fiber networks and the field.</p>
+   <a class="cta" href="#experience">Explore my experience <span aria-hidden="true">↗</span></a>
+   <p class="hero-kicker">Hands-on knowledge. Practical solutions. Lasting results.</p>
+  </div>
+  <div class="hero-visual" aria-label="Custom illustration of connected technology fields and 20-plus years of experience">
+    <div class="visual-outline" aria-hidden="true"></div>
+    <svg viewBox="0 0 450 410" role="img" aria-labelledby="network-title network-description" xmlns="http://www.w3.org/2000/svg">
+      <title id="network-title">Connected experience</title><desc id="network-description">A technical network illustration connecting IT support, fiber connectivity, and quality around 20 plus years of experience.</desc>
+      <defs><radialGradient id="glow"><stop stop-color="#aa6566" stop-opacity=".28"/><stop offset="1" stop-color="#aa6566" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="228" cy="205" r="175" fill="url(#glow)"/>
+      <g fill="none" stroke="#80626a" stroke-width="1" opacity=".7"><circle cx="228" cy="205" r="129"/><circle cx="228" cy="205" r="158" stroke-dasharray="4 9"/><circle cx="228" cy="205" r="96" stroke="#9e7675" opacity=".8"/><path d="M32 205H420M228 11V399" opacity=".23"/><path d="M45 79H120V116M335 304H419M20 335H111V300" opacity=".5"/></g>
+      <g class="v-stroke" stroke-width="2.4"><path d="M228 109V68H298L329 40"/><path d="M126 205H72L44 177"/><path d="M310 259L349 308H411"/><path d="M159 271L123 327H65"/></g>
+      <g class="v-node"><circle cx="228" cy="109" r="5"/><circle cx="126" cy="205" r="5"/><circle cx="310" cy="259" r="5"/><circle cx="159" cy="271" r="5"/></g>
+      <g class="v-dot"><circle cx="329" cy="40" r="4"/><circle cx="44" cy="177" r="4"/><circle cx="411" cy="308" r="4"/><circle cx="65" cy="327" r="4"/></g>
+      <circle cx="228" cy="205" r="84" fill="#28262b" stroke="#bd8c89" stroke-width="1.5"/>
+      <circle cx="228" cy="205" r="75" fill="none" stroke="#70555b" stroke-width="1"/>
+      <text x="228" y="192" text-anchor="middle" class="v-title">20+</text>
+      <text x="228" y="222" text-anchor="middle" class="v-sub">YEARS</text>
+      <text x="228" y="240" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="10" letter-spacing="1.5" fill="#bdaca8">IN TECHNOLOGY</text>
+      <text x="338" y="36" class="v-label">IT SUPPORT</text>
+      <text x="12" y="158" class="v-label">FIBER</text>
+      <text x="328" y="326" class="v-label">QUALITY</text>
+      <text x="20" y="348" class="v-label">MENTORING</text>
+      <path d="M359 71h58v13M26 246h20m321 122h35" fill="none" stroke="#b78b87" stroke-width="2"/>
+    </svg>
+    <span class="visual-caption">Different disciplines. One approach.</span>
+  </div>
+ </div>
+</section>
+
+<div class="milestones" aria-label="Career highlights">
+ <div class="container milestone-grid">
+  <div class="milestone"><strong>20+</strong><span>years of practical technology experience</span></div>
+  <div class="milestone"><strong>27</strong><span>states served on fiber assignments</span></div>
+  <div class="milestone"><strong>~15</strong><span>technicians mentored in the field</span></div>
+ </div>
+</div>
+
+<section class="section about" id="about">
+ <div class="container about-layout">
+  <div>
+   <p class="section-tag">01 / The approach</p>
+   <h2 class="section-heading">A career built on <em>doing it right.</em></h2>
+   <div class="body-copy">
+    <p>I've worked with technology in classrooms, mine offices, businesses, homes, and remote communications sites. Every environment is different. The fundamentals aren't.</p>
+    <p>Understand the problem. Do the work carefully. Document what matters. And help the next person succeed.</p>
+   </div>
+   <div class="signature"><p>Good work speaks for itself.</p><small>Steven Gerbitz · Technical professional</small></div>
+  </div>
+  <aside class="focus">
+   <p class="focus-head">Where I make a difference</p>
+   <div class="focus-row"><b>01</b><span>Complex troubleshooting and technical escalation</span></div>
+   <div class="focus-row"><b>02</b><span>Installation quality and detailed documentation</span></div>
+   <div class="focus-row"><b>03</b><span>Practical, one-on-one technical mentoring</span></div>
+   <div class="focus-row"><b>04</b><span>Supporting people with patience and follow-through</span></div>
+  </aside>
+ </div>
+</section>
+
+<section class="section experience" id="experience">
+ <div class="container">
+  <div class="experience-head"><div><p class="section-tag">02 / Career</p><h2 class="section-heading">Experience with <em>depth.</em></h2></div><p>A selection of roles that shaped how I think, troubleshoot, and work with people.</p></div>
+  <div class="timeline">
+    <article class="job"><div class="job-date">2025 — PRESENT</div><div><h3>Des Moines Public Schools</h3><p class="role">Information Technology Specialist</p><p class="desc">Frontline IT support for school technology, including staff devices, student iPads, classroom equipment, and district technology rollouts.</p></div></article>
+    <article class="job"><div class="job-date">APR — AUG 2025</div><div><h3>MetroNet</h3><p class="role">Fiber Technician</p><p class="desc">Diagnosed customer fiber outages, replaced damaged drops, performed fusion splicing, and verified restored connections.</p></div></article>
+    <article class="job"><div class="job-date">2019 — 2025</div><div><h3>Vantage Point Solutions</h3><p class="role">Integration Services Technician / Fiber Technician</p><p class="desc">Residential and business fiber installations across 27 states, technical documentation, quality checks, and one-on-one field training for approximately 15 new technicians.</p></div></article>
+    <article class="job"><div class="job-date">2015 — 2019</div><div><h3>Peabody Energy</h3><p class="role">Onsite Support Specialist — IT</p><p class="desc">Enterprise technology support across three mining operations: workstation troubleshooting, hardware repairs, device deployment, scripts, and help documentation.</p></div></article>
+    <article class="job"><div class="job-date">2010 — 2015</div><div><h3>Visionary & Collins Communications</h3><p class="role">Broadband Technical Support & Field Installation</p><p class="desc">DSL and wireless broadband, customer installations, remote relay sites, and practical improvements to installation quality.</p></div></article>
+  </div>
+  <details><summary>Earlier experience and recognition</summary><div class="earlier"><strong>GoDaddy</strong> — Advanced Hosting & Technical Support (2009–2010)<br><strong>Ameritraining / AT&amp;T U-verse</strong> — Tier II Technical Support (2007–2009)<br><strong>The Salvation Army</strong> — IT Field Technician (2005–2006)<br><strong>Recognition:</strong> Employee of the Month (twice), Employee of the Quarter (Q4 2010)</div></details>
+ </div>
+</section>
+
+<section class="section projects" id="projects">
+ <div class="container">
+  <p class="section-tag light">03 / Independent projects</p>
+  <h2 class="section-heading">Ideas made <em>useful.</em></h2>
+  <div class="project-list">
+   <article class="project"><span class="project-index">01</span><h3>Addicted to Karaoke</h3><p>A community platform connecting singers, karaoke hosts, and venues around local experiences.</p></article>
+   <article class="project"><span class="project-index">02</span><h3>Cents Happens</h3><p>A personal finance application for managing bills, budgets, and everyday planning.</p></article>
+   <article class="project"><span class="project-index">03</span><h3>Garage Buddy</h3><p>A vehicle information and maintenance tool for keeping records, expenses, and documents organized.</p></article>
+   <article class="project"><span class="project-index">04</span><h3>Android utilities</h3><p>Call management and interface projects designed for simplicity, usability, and user control.</p></article>
+  </div>
+  <p class="project-note">My work includes defining product requirements, refining the experience, reviewing features, and hands-on testing. These are collaborative, AI-assisted development projects.</p>
+ </div>
+</section>
+
+<section class="values" id="values">
+ <div class="container values-layout">
+  <p class="section-tag">04 / Principles</p>
+  <div><blockquote>“Integrity First.<br>Service Before Self.<br>Excellence in All We Do.”</blockquote><p class="note">United States Air Force values that continue to guide the way I approach my work.</p></div>
+ </div>
+</section>
+</main>
+<footer><div class="container footer-inner"><strong>Steven Gerbitz</strong><span>Technology built on experience.</span><span>© <span id="year">2026</span></span></div></footer>
+<script>
+(function(){
+ const toggle=document.querySelector(".menu"),nav=document.querySelector(".nav");
+ if(toggle&&nav){
+ const close=()=>{toggle.setAttribute("aria-expanded","false");nav.classList.remove("open")};
+ toggle.addEventListener("click",()=>{let open=toggle.getAttribute("aria-expanded")!=="true";toggle.setAttribute("aria-expanded",String(open));nav.classList.toggle("open",open)});
+ nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",close));
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+ document.addEventListener("click",e=>{if(!toggle.contains(e.target)&&!nav.contains(e.target))close()});
+ }
+ const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

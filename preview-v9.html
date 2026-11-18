@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#25272a">
+<meta name="description" content="Hi, I'm Steven Gerbitz. A little about me, my work in technology and telecommunications, and what I like to build.">
+<meta property="og:title" content="Steven Gerbitz | A little about me">
+<meta property="og:description" content="A personal corner of the internet about technology, curiosity, and a little humor.">
+<meta property="og:type" content="website">
+<title>Steven Gerbitz | Three Stories — Version 9 Preview</title>
+<style>
+:root{
+ --night:#25272a;--night-deep:#1b1d20;--night-soft:#343337;
+ --cream:#f5efe4;--cream-bright:#fdfaf3;--paper:#eee7dc;--paper-dark:#e4dacb;
+ --wine:#91494f;--wine-light:#d2a6a0;--gold:#c2a37d;--text:#303035;--muted:#595b5f;
+ --rule:#cdbfaa;--rule-night:#61565a;--serif:Georgia,Cambria,"Times New Roman",serif;--ui:"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--cream);color:var(--text);font:16px/1.75 var(--ui);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #d89469;outline-offset:5px}
+.site-width{max-width:1100px;width:calc(100% - 64px);margin:0 auto}
+.skip{position:absolute;left:16px;top:-100px;background:#fff6e7;color:#212121;padding:10px;z-index:120}
+.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:60;background:#f4eee4f7;border-bottom:1px solid #d2c3b1;backdrop-filter:blur(14px)}
+.header-content{height:77px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{position:relative;display:grid;place-items:center;height:38px;width:38px;flex:none;border:1px solid #a66f70;color:#713b40;font:italic 21px var(--serif)}
+.brand-mark:after{content:"";position:absolute;bottom:-5px;right:-5px;height:6px;width:6px;background:var(--wine)}
+.brand-name{font-size:15px;font-weight:800;letter-spacing:.015em;line-height:1.1;white-space:nowrap}
+.brand-name small{display:block;margin-top:5px;font-size:9px;line-height:1.3;color:#816363;letter-spacing:.18em;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{font-size:12px;font-weight:700;color:#555054;transition:color .2s}
+.nav a:hover{color:var(--wine)}
+.menu-btn{display:none;align-items:center;gap:8px;padding:8px 11px;border:1px solid #b8a89b;background:transparent;border-radius:2px;font-size:12px;font-weight:800;color:#5d4346}
+.menu-icon{font-size:18px;line-height:1}
+.hero{position:relative;overflow:hidden;background:linear-gradient(118deg,#25272a,#2d2b2e 67%,#353033);color:#f5eee3}
+.hero:after{content:"";position:absolute;right:-60px;bottom:-210px;width:500px;height:500px;border-radius:50%;border:1px solid #87717635;box-shadow:0 0 0 63px #a9787810,0 0 0 130px #a9787808;pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:8%;align-items:center;padding:82px 0 85px}
+.eyebrow{font-size:11px;letter-spacing:.17em;color:#dbafa4;text-transform:uppercase;font-weight:800;margin:0 0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:-.035em}
+h1{font-size:clamp(3.8rem,7.4vw,6.6rem);margin:0 0 26px}
+h1 .hello{display:block;color:#f2e6d6}
+h1 em{display:block;font-style:italic;color:#dba9a3}
+.hero-lead{color:#f0e7dd;font-size:clamp(1.16rem,1.8vw,1.42rem);line-height:1.55;margin:0 0 19px;max-width:630px}
+.hero-text{color:#c9c4bf;max-width:590px;font-size:15px;line-height:1.85;margin:0}
+.hero-link{display:inline-flex;align-items:center;gap:18px;margin-top:27px;font-size:13px;font-weight:800;border-bottom:1px solid #bd8c8c;padding-bottom:7px;color:#f5e3dc}
+.hero-link:hover{color:#fff}
+.hero-link span{font-size:20px;font-weight:400;line-height:1}
+.desk-note{position:relative;background:#f7f0e3;color:#353336;padding:27px 31px 27px 33px;border:1px solid #d4bba3;box-shadow:12px 13px 0 #120b1040;transform:rotate(1.4deg)}
+.desk-note:before{content:"";position:absolute;top:0;left:28px;width:22px;height:42px;border-left:2px solid #ad9292;border-right:2px solid #ad9292;border-bottom:2px solid #ad9292;border-radius:0 0 13px 13px;transform:translateY(-15px);opacity:.65}
+.desk-note .note-overline{font:800 10px/1.5 var(--ui);text-transform:uppercase;letter-spacing:.2em;color:#8f4a4e;margin:0 0 19px;padding-left:10px}
+.desk-note h2{font:italic 400 clamp(1.45rem,2.5vw,2rem)/1.38 var(--serif);letter-spacing:-.015em;margin:0 0 13px}
+.desk-note p{font-size:13px;color:#605b58;margin:0 0 22px;line-height:1.8}
+.desk-note .sketch{width:100%;height:auto;display:block;opacity:.95}
+.section{padding:87px 0}
+.section-label{margin:0 0 16px;color:#8e464e;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.18em}
+h2.section-title{font-size:clamp(2.25rem,4.5vw,3.75rem);margin:0 0 23px;max-width:760px}
+h2.section-title em{font-style:italic;color:var(--wine)}
+.about{background:var(--cream-bright)}
+.about-in{display:grid;grid-template-columns:1.15fr .65fr;gap:13%;align-items:start}
+.copy{max-width:730px}
+.copy p{font-size:16px;line-height:1.92;color:#4d4d50;margin:0 0 17px}
+.copy p:last-child{margin-bottom:0}
+.margin-note{border-left:2px solid #a66368;padding:11px 0 12px 24px;margin-top:70px}
+.margin-note .hand{color:#6f4245;font:italic 400 26px/1.43 var(--serif);margin:0 0 12px}
+.margin-note small{font-size:12px;color:#686360;line-height:1.7;display:block}
+.journey{background:var(--paper);border-top:1px solid #d8ccbe}
+.journey-intro{max-width:750px;color:#5d5c5c;font-size:15px;margin:0 0 29px}
+.history{position:relative;margin-left:12px;border-left:1px solid #b69d94}
+.stop{position:relative;padding:1px 0 24px 35px;margin-bottom:18px}
+.stop:before{content:"";position:absolute;width:11px;height:11px;border:3px solid #914a51;background:#f5eee4;border-radius:50%;left:-6px;top:7px}
+.stop:last-child{margin-bottom:0;padding-bottom:0}
+.stop time{color:#8c4a50;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.stop h3{font-size:23px;margin:4px 0 2px}
+.stop .jobtitle{font-size:13px;color:#65545a;font-weight:700;margin:0 0 8px}
+.stop .summary{font-size:14px;line-height:1.76;color:#5b5b5d;margin:0;max-width:750px}
+.more-work{margin:26px 0 0 46px}
+details summary{cursor:pointer;display:inline-flex;align-items:center;gap:11px;border-bottom:1px solid #aa8581;padding-bottom:7px;font-size:13px;font-weight:750;color:#7d3f45;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";font-size:18px;font-weight:400}
+details[open] summary::before{content:"−"}
+.more-content{padding:13px 0 0;color:#5f5c5a;font-size:13px;line-height:2}
+.tinkering{background:#27282c;color:#ede8df}
+.tinkering .section-label{color:#d9aaa5}
+.tinkering .section-title{color:#f3e8dc}
+.tinkering .section-title em{color:#dfada7}
+.tinkering-intro{color:#c7c1be;max-width:720px;margin:0 0 28px;font-size:15px;line-height:1.85}
+.project-rows{border-top:1px solid #5b5355}
+.project-row{display:grid;grid-template-columns:40px minmax(0,1fr) minmax(0,1.1fr);gap:17px;padding:22px 0;border-bottom:1px solid #5b5355;align-items:start}
+.project-num{font:italic 21px var(--serif);color:#cc9f9b;line-height:1.35}
+.project-row h3{font-size:25px;margin:0}
+.project-row p{font-size:13px;color:#c4c0bd;line-height:1.8;margin:0}
+.project-caption{font-size:12px;color:#aca8a6;line-height:1.8;margin:25px 0 0;max-width:800px}
+.values{background:var(--cream-bright);border-top:1px solid #ddd2c6}
+.values-in{display:grid;grid-template-columns:1fr 1.1fr;gap:9%;align-items:center}
+.values h2.section-title{margin-bottom:10px}
+.values .principle{font:italic 400 clamp(1.55rem,2.7vw,2.45rem)/1.4 var(--serif);color:#733c42;margin:0 0 13px}
+.values .details{font-size:14px;color:#5b5a5b;line-height:1.8;margin:0}
+footer{background:#1c1e21;color:#c6bfba}
+.footer-content{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:26px 0}
+.footer-content strong{font-size:14px;color:#f3e7dc}
+.footer-content span{font-size:12px}
+@media(max-width:930px){
+ .hero-inner{gap:5%;padding:75px 0}
+ .desk-note{padding:24px 23px}
+ .about-in{gap:7%}
+ .margin-note{margin-top:45px}
+}
+@media(max-width:720px){
+ html{scroll-padding-top:67px}
+ .site-width{width:calc(100% - 38px)}
+ .header-content{height:67px}
+ .brand-mark{height:34px;width:34px;font-size:19px}
+ .brand-name{font-size:14px}
+ .brand-name small{font-size:8px}
+ .menu-btn{display:flex}
+ .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fbf7ef;border-bottom:1px solid #d2c3b1;padding:11px 19px;box-shadow:0 14px 18px #0002}
+ .nav.open{display:flex}
+ .nav a{display:block;padding:11px 5px;border-bottom:1px solid #e1d9cb;font-size:13px}
+ .hero-inner{grid-template-columns:1fr;gap:32px;padding:57px 0 60px}
+ h1{font-size:clamp(3.55rem,11vw,5.1rem);margin:0 0 19px}
+ .eyebrow{margin-bottom:16px}
+ .hero-lead{font-size:1.22rem}
+ .hero-text{font-size:14px;line-height:1.75}
+ .desk-note{transform:rotate(0);box-shadow:6px 7px 0 #120b1026;max-width:580px;padding:24px 23px 19px}
+ .desk-note h2{font-size:1.56rem;max-width:480px}
+ .desk-note p{margin-bottom:10px}
+ .desk-note .sketch{max-width:430px}
+ .section{padding:65px 0}
+ .about-in,.values-in{grid-template-columns:1fr;gap:22px}
+ .margin-note{margin-top:2px;padding-left:20px}
+ .values-in{gap:24px}
+ .project-row{grid-template-columns:35px 1fr;gap:9px}
+ .project-row p{grid-column:2}
+}
+@media(max-width:450px){
+ .site-width{width:calc(100% - 34px)}
+ .hero-inner{padding:44px 0 49px;gap:27px}
+ h1{font-size:clamp(3.2rem,13vw,4.1rem)}
+ .hero-lead{font-size:1.12rem}
+ .eyebrow{font-size:10px;letter-spacing:.115em}
+ .hero-link{margin-top:22px}
+ .desk-note .note-overline{font-size:9px}
+ .desk-note .sketch{height:72px}
+ .section{padding:55px 0}
+ h2.section-title{font-size:2.45rem}
+ .stop{padding-left:25px}
+ .more-work{margin-left:35px}
+ .footer-content{align-items:start;flex-direction:column;gap:5px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* V7 — lighthearted introduction, a grounded philosophy */
+.hero h1{font-size:clamp(3.45rem,5.95vw,5.7rem);line-height:1.09;max-width:800px}
+.hero h1 em{line-height:1.12}
+.hero .punchline{color:#f3d2cc;border-bottom:2px solid #bc777c;white-space:nowrap}
+.desk-note{transform:rotate(-.9deg)}
+.desk-note .note-overline{margin-bottom:17px}
+.desk-note h2{font-size:clamp(1.55rem,2.4vw,1.95rem)}
+@media(max-width:720px){
+ .hero h1{font-size:clamp(3.05rem,9.3vw,4.65rem);line-height:1.12}
+ .desk-note{transform:none}
+}
+@media(max-width:450px){
+ .hero h1{font-size:clamp(2.9rem,10vw,3.55rem)}
+ .desk-note h2{font-size:1.47rem}
+}
+
+
+/* V8 — three equal photographs: real scenes, no sales-brochure overlays */
+.pillars{background:#f9f5ed;border-bottom:1px solid #d5c9ba;padding:67px 0 70px}
+.pillars .section-label{margin-bottom:12px}
+.pillars-title{font:400 clamp(2.25rem,4vw,3.3rem)/1.15 var(--serif);letter-spacing:-.03em;color:#322d2f;margin:0 0 14px}
+.pillars-title em{color:#8b474b;font-style:italic}
+.pillars-intro{max-width:790px;color:#615b5a;font-size:15px;margin:0 0 31px;line-height:1.83}
+.pillars-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.pillar-photo{margin:0;min-width:0}
+.pillar-frame{aspect-ratio:1.22;overflow:hidden;background:#d0c7ba;border:1px solid #d1c4b5;position:relative}
+.pillar-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.76) contrast(1.04)}
+.pillar-photo:nth-child(1) img{object-position:64% center}
+.pillar-photo:nth-child(2) img{object-position:center}
+.pillar-photo:nth-child(3) img{object-position:45% center}
+.pillar-caption{padding:16px 0 0}
+.pillar-caption h3{font:400 25px/1.25 var(--serif);color:#2e2d30;margin:0 0 8px}
+.pillar-caption p{font-size:14px;color:#575658;line-height:1.75;margin:0}
+.pillar-emphasis{display:block;height:2px;width:42px;background:#9a5960;margin:13px 0 0}
+.pillars-reflection{font:italic 21px/1.4 var(--serif);color:#713f44;margin:27px 0 0}
+.pillars-credit{font-size:10px;line-height:1.7;color:#79716e;margin:16px 0 0;max-width:950px}
+.pillars-credit a{color:#7e4c50;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:800px){.pillars-three{gap:13px}.pillar-caption h3{font-size:22px}.pillar-caption p{font-size:13px}}
+@media(max-width:720px){.pillars{padding:52px 0 56px}.pillars-title{font-size:2.4rem}.pillars-three{grid-template-columns:1fr;max-width:520px;gap:27px}.pillar-frame{aspect-ratio:1.7}.pillar-caption{padding:11px 0 0}.pillar-caption h3{font-size:25px}.pillar-caption p{font-size:14px}.pillar-emphasis{margin-top:10px}}
+@media(max-width:430px){.pillars{padding:46px 0 50px}.pillars-title{font-size:2.15rem}.pillar-frame{aspect-ratio:1.45}}
+
+
+/* V9 — each pillar opens its personal story */
+.pillar-click{display:block;color:inherit;text-decoration:none}
+.pillar-click .pillar-frame{transition:border-color .2s,box-shadow .2s}
+.pillar-click .pillar-frame img{transition:transform .3s ease,filter .3s ease}
+.pillar-click:hover .pillar-frame,.pillar-click:focus-visible .pillar-frame{border-color:#96575a;box-shadow:0 0 0 2px #96575a25}
+.pillar-click:hover .pillar-frame img,.pillar-click:focus-visible .pillar-frame img{transform:scale(1.035);filter:saturate(.91) contrast(1.05)}
+.pillar-click:hover .pillar-caption h3{color:#824047}
+.pillar-click:focus-visible{outline:3px solid #a35b60;outline-offset:5px;border-radius:1px}
+.read-story{display:inline-flex;align-items:center;gap:12px;margin-top:13px;color:#82454b;font-size:12px;font-weight:800;border-bottom:1px solid #b3888c;padding-bottom:4px}
+.read-story span{font-size:16px;font-weight:400}
+@media(prefers-reduced-motion:reduce){.pillar-click .pillar-frame,.pillar-click .pillar-frame img{transition:none}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+ <div class="site-width header-content">
+  <a class="brand" href="#home" aria-label="Steven Gerbitz, homepage"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">STEVEN GERBITZ<small>My little corner of the internet</small></span></a>
+  <button type="button" class="menu-btn" aria-controls="navigation" aria-expanded="false"><span class="menu-icon" aria-hidden="true">☰</span>Menu</button>
+  <nav class="nav" id="navigation" aria-label="Main navigation">
+    <a href="#pillars">Three pillars</a><a href="#about">About</a><a href="#journey">My journey</a><a href="#projects">Side projects</a><a href="#values">What matters</a>
+  </nav>
+ </div>
+</header>
+<main id="main">
+<section class="hero" id="home">
+ <div class="site-width hero-inner">
+  <div>
+   <p class="eyebrow">Hello there. Nice to meet you.</p>
+   <h1><span class="hello">Hi, it's me.</span><em>I'm the problem... <span class="punchline">solver.</span></em></h1>
+   <p class="hero-lead">I'm Steve. I've spent more than 20 years figuring out why technology doesn't work—and helping people when it doesn't.</p>
+   <p class="hero-text">From fiber installations to classroom computers, I like finding the answer, doing the job properly, and remembering there's a person on the other side of the problem.</p>
+   <a class="hero-link" href="#pillars">Get to know me <span aria-hidden="true">↘</span></a>
+  </div>
+  <aside class="desk-note" aria-label="From Steven's notebook">
+   <p class="note-overline">A little philosophy / No. 01</p>
+   <h2>“Good connections are about more than cables.”</h2>
+   <p>Do the work right. Treat people right. And leave room for a little humor.</p>
+   <svg class="sketch" viewBox="0 0 310 96" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#a57478" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 54h62c11 0 18-6 18-15s-7-16-16-16-16 7-16 16 7 15 18 15h65c13 0 13-23 26-23h36" />
+      <path d="M202 31v-7h23v14h-23v-7m23 0h30c5 0 9 4 9 9v25c0 5 4 9 9 9h19" />
+      <rect x="292" y="64" width="10" height="20" rx="1"/><path d="M294 64v-6m6 6v-6"/>
+      <circle cx="25" cy="54" r="5"/><circle cx="164" cy="31" r="5"/><circle cx="272" cy="74" r="5"/>
+    </g>
+    <g fill="#92545c"><circle cx="25" cy="54" r="2"/><circle cx="164" cy="31" r="2"/><circle cx="272" cy="74" r="2"/></g>
+   </svg>
+  </aside>
+ </div>
+</section>
+
+
+<section class="pillars" id="pillars" aria-labelledby="pillars-title">
+ <div class="site-width">
+  <p class="section-label">01 / Three things I know a little about</p>
+  <h2 class="pillars-title" id="pillars-title">The cables. The computers. <em>The people.</em></h2>
+  <p class="pillars-intro">After more than twenty years in technology, a lot of my experience comes back to these three things. Different kinds of work, but the same approach: figure it out, do it right, and remember who you're helping.</p>
+  <div class="pillars-three">
+   <a class="pillar-photo pillar-click" href="./stories/fiber.html" aria-label="Read my Fiber Optics story">
+    <div class="pillar-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Fiber_Splice.jpg/960px-Fiber_Splice.jpg" alt="An opened fiber-optic splice enclosure with organized fiber strands and splicing equipment on a workbench" loading="lazy" decoding="async" width="960" height="720"></div>
+    <div class="pillar-caption"><h3>Fiber Optics</h3><p>The hands-on work: getting the connection right, testing it, and making sure it stays right.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
+   </a>
+   <a class="pillar-photo pillar-click" href="./stories/technical-support.html" aria-label="Read my Technical Support story">
+    <div class="pillar-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Computer_repair_in_progress.jpg/960px-Computer_repair_in_progress.jpg" alt="Hands servicing the inside of a laptop, with its motherboard and cooling system exposed" loading="lazy" decoding="async" width="960" height="636"></div>
+    <div class="pillar-caption"><h3>Technical Support</h3><p>The puzzle: finding out what actually went wrong instead of just guessing at it.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
+   </a>
+   <a class="pillar-photo pillar-click" href="./stories/customer-service.html" aria-label="Read my Customer Service story">
+    <div class="pillar-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Computer_training_%284428766986%29.jpg/960px-Computer_training_%284428766986%29.jpg" alt="Three people working together around a computer during a community training session" loading="lazy" decoding="async" width="960" height="640"></div>
+    <div class="pillar-caption"><h3>Customer Service</h3><p>The part that matters most: listening, explaining things clearly, and treating people with respect.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
+   </a>
+  </div>
+  <p class="pillars-reflection">Good connections are about more than cables.</p>
+  <p class="pillars-credit">Illustrative documentary photographs (not Steven or his installations): <a href="https://commons.wikimedia.org/wiki/File:Fiber_Splice.jpg" target="_blank" rel="noopener noreferrer">fiber splice case — Dhaluza (CC BY 3.0)</a>; <a href="https://commons.wikimedia.org/wiki/File:Computer_repair_in_progress.jpg" target="_blank" rel="noopener noreferrer">computer repair — Vintechcomputerservices (CC BY-SA 4.0)</a>; <a href="https://commons.wikimedia.org/wiki/File:Computer_training_(4428766986).jpg" target="_blank" rel="noopener noreferrer">community training — Weldon Kennedy (CC BY 2.0)</a>. Images shown with website cropping.</p>
+ </div>
+</section>
+
+<section class="section about" id="about">
+ <div class="site-width about-in">
+  <div class="copy">
+   <p class="section-label">02 / About me</p>
+   <h2 class="section-title">A little curiosity goes a <em>long way.</em></h2>
+   <p>I've spent more than 20 years working with technology in all sorts of places: classrooms, mines, homes, businesses, and some pretty remote communications sites.</p>
+   <p>I've been the person answering the phone, the one standing in front of the equipment, and the one showing a newer technician how to get a job done right.</p>
+   <p>What I enjoy most hasn't really changed: finding out what went wrong, helping someone, and making sure the fix actually holds.</p>
+  </div>
+  <aside class="margin-note">
+   <p class="hand">I'm serious about the work. Not so serious that I can't laugh at myself.</p>
+   <small>One of the things I've learned: patience and a sense of humor go a long way in technical support.</small>
+  </aside>
+ </div>
+</section>
+
+<section class="section journey" id="journey">
+ <div class="site-width">
+  <p class="section-label">03 / The journey</p>
+  <h2 class="section-title">A few places I've <em>been.</em></h2>
+  <p class="journey-intro">Different environments, different challenges, and plenty of stories. Here's the short version of my career.</p>
+  <div class="history">
+   <article class="stop"><time>2025 — Present</time><h3>Des Moines Public Schools</h3><p class="jobtitle">Information Technology Specialist</p><p class="summary">Helping teachers, staff, and students keep school technology running—from laptops and iPads to the equipment in classrooms.</p></article>
+   <article class="stop"><time>Apr — Aug 2025</time><h3>MetroNet</h3><p class="jobtitle">Fiber Technician</p><p class="summary">Tracking down fiber problems, replacing damaged customer drops, splicing connections, and getting service restored.</p></article>
+   <article class="stop"><time>2019 — 2025</time><h3>Vantage Point Solutions</h3><p class="jobtitle">Integration Services Technician / Fiber Technician</p><p class="summary">Installing fiber in homes and businesses across 27 states, documenting work, and helping approximately 15 new technicians learn the trade one-on-one.</p></article>
+   <article class="stop"><time>2015 — 2019</time><h3>Peabody Energy</h3><p class="jobtitle">Onsite Support Specialist — IT</p><p class="summary">Enterprise computer support across three mining operations, including hardware repairs, workstation deployments, and useful little batch scripts.</p></article>
+   <article class="stop"><time>2010 — 2015</time><h3>Visionary & Collins Communications</h3><p class="jobtitle">Broadband Support and Field Installations</p><p class="summary">DSL and wireless broadband, customer installations, tower work, and remote relay sites. Some of my best lessons came far from a desk.</p></article>
+  </div>
+  <div class="more-work"><details><summary>And before all that?</summary><div class="more-content"><strong>GoDaddy</strong> — Advanced Hosting & Technical Support (2009–2010)<br><strong>Ameritraining / AT&amp;T U-verse</strong> — Tier II Technical Support (2007–2009)<br><strong>The Salvation Army</strong> — IT Field Technician (2005–2006)</div></details></div>
+ </div>
+</section>
+
+<section class="section tinkering" id="projects">
+ <div class="site-width">
+  <p class="section-label">04 / After hours</p>
+  <h2 class="section-title">I have a habit of <em>tinkering.</em></h2>
+  <p class="tinkering-intro">Turns out that when I have an idea for something useful, I have a hard time leaving it as just an idea. A few of my ongoing projects:</p>
+  <div class="project-rows">
+   <article class="project-row"><span class="project-num">01</span><h3>Addicted to Karaoke</h3><p>Helping singers find karaoke nights and bringing hosts, venues, and the community together.</p></article>
+   <article class="project-row"><span class="project-num">02</span><h3>Cents Happens</h3><p>A personal finance app for keeping bills, budgets, and financial plans organized.</p></article>
+   <article class="project-row"><span class="project-num">03</span><h3>Garage Buddy</h3><p>A vehicle companion for maintenance details, paperwork, and ownership expenses.</p></article>
+   <article class="project-row"><span class="project-num">04</span><h3>Android experiments</h3><p>Call management, launcher concepts, and small tools to make everyday technology behave more usefully.</p></article>
+  </div>
+  <p class="project-caption">I shape the ideas, product requirements, workflows, and testing, using AI-assisted development collaboratively to bring the projects to life.</p>
+ </div>
+</section>
+
+<section class="section values" id="values">
+ <div class="site-width values-in">
+  <div>
+    <p class="section-label">05 / A few principles</p>
+    <h2 class="section-title">Some things <em>stick with you.</em></h2>
+  </div>
+  <div>
+    <p class="principle">“Integrity First. Service Before Self. Excellence in All We Do.”</p>
+    <p class="details">Those Air Force core values have stayed with me. They still make a pretty good compass, whether I'm troubleshooting a computer, working with a team, or learning something new.</p>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="site-width footer-content"><strong>Steven Gerbitz</strong><span>Thanks for stopping by. I hope you enjoyed the visit.</span></div></footer>
+<script>
+(()=>{
+ const button=document.querySelector(".menu-btn");
+ const nav=document.querySelector("#navigation");
+ if(!button||!nav)return;
+ const close=()=>{button.setAttribute("aria-expanded","false");nav.classList.remove("open");};
+ button.addEventListener("click",()=>{const open=button.getAttribute("aria-expanded")!=="true";button.setAttribute("aria-expanded",String(open));nav.classList.toggle("open",open);});
+ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",close));
+ document.addEventListener("keydown",event=>{if(event.key==="Escape")close();});
+ document.addEventListener("click",event=>{if(!button.contains(event.target)&&!nav.contains(event.target))close();});
+})();
+</script>
+</body>
+</html>

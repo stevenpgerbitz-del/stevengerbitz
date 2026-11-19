@@ -641,6 +641,39 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
  .v28-preview .v28-contact h2{font-size:2.9rem}
 }
 @media(prefers-reduced-motion:reduce){.v28-preview .hero-actions a{transition:none}}
+
+/* V28 mission & values: work and personal life in a cohesive editorial spread */
+.v28-preview .v28-mission{background:#eae0d2;padding:95px 0 85px;position:relative;overflow:hidden}
+.v28-preview .v28-mission::before{content:"VALUES";position:absolute;right:-12px;top:-47px;font:700 clamp(100px,17vw,235px)/1 Georgia,serif;letter-spacing:-.06em;color:#b8a18b16;pointer-events:none}
+.v28-preview .v28-mission .v28-mission-head{position:relative;display:grid;grid-template-columns:1fr .75fr;gap:8%;align-items:end;border-bottom:1px solid #c9b8aa;padding-bottom:35px;margin-bottom:42px}
+.v28-preview .v28-mission .section-title{margin-bottom:0;font-size:clamp(2.85rem,5.3vw,4.7rem)}
+.v28-preview .v28-mission-lead{max-width:420px;color:#584f50;font-size:15px;line-height:1.85;margin:0 0 7px}
+.v28-preview .v28-mission-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:7%}
+.v28-preview .v28-mission-column{min-width:0}
+.v28-preview .v28-mission-column + .v28-mission-column{border-left:1px solid #c7b5a7;padding-left:12%}
+.v28-preview .v28-mission-index{color:#85444b;font-size:10px;font-weight:800;letter-spacing:.17em;margin:0 0 21px}
+.v28-preview .v28-mission-column h3{font:400 clamp(1.9rem,2.7vw,2.75rem)/1.17 Georgia,serif;margin:0 0 21px;letter-spacing:-.025em}
+.v28-preview .v28-mission-column h3 em{font-style:italic;color:#894b50}
+.v28-preview .v28-mission-column>p:not(.v28-mission-index){font-size:14px;line-height:1.85;color:#5a5351;margin:0 0 28px}
+.v28-preview .v28-mission-points{list-style:none;margin:0;padding:0;border-top:1px solid #cbb9a9}
+.v28-preview .v28-mission-points li{display:block;font-size:13px;line-height:1.7;color:#5b5552;padding:13px 0 13px 16px;border-bottom:1px solid #d1c2b5;position:relative}
+.v28-preview .v28-mission-points li::before{content:"";position:absolute;width:5px;height:5px;left:0;top:23px;background:#8c5056;border-radius:50%}
+.v28-preview .v28-mission-points strong{font-weight:800;color:#413337}
+.v28-preview .v28-values-bottom{display:grid;grid-template-columns:1fr 1fr;gap:8%;border-top:1px solid #bfa99b;padding-top:25px;margin-top:45px;align-items:start}
+.v28-preview .v28-values-bottom>p{margin:0;font-size:12px;color:#695d59;line-height:1.9}
+.v28-preview .v28-values-bottom strong{font-weight:700}
+.v28-preview .v28-values-quote{font:italic 18px/1.55 Georgia,serif!important;color:#70454b!important}
+.v28-preview .v28-values-quote span{white-space:nowrap;font:normal 11px "Segoe UI",Arial,sans-serif;color:#7e7270}
+@media(max-width:720px){
+ .v28-preview .v28-mission{padding:62px 0}
+ .v28-preview .v28-mission .v28-mission-head{grid-template-columns:1fr;gap:16px;margin-bottom:29px;padding-bottom:23px}
+ .v28-preview .v28-mission .section-title{font-size:clamp(2.7rem,9vw,3.5rem)}
+ .v28-preview .v28-mission-lead{max-width:600px}
+ .v28-preview .v28-mission-grid{grid-template-columns:1fr;gap:35px}
+ .v28-preview .v28-mission-column + .v28-mission-column{border-left:0;border-top:1px solid #c7b5a7;padding:29px 0 0}
+ .v28-preview .v28-mission-column h3{font-size:2.35rem}
+ .v28-preview .v28-values-bottom{grid-template-columns:1fr;gap:16px;margin-top:33px}
+}
 </style>
 </head>
 <body class="v28-preview">
@@ -651,7 +684,7 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
   <a class="brand" href="#home" aria-label="Steven Gerbitz, homepage"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">STEVEN GERBITZ<small>My little corner of the internet</small></span></a>
   <button type="button" class="menu-btn" aria-controls="navigation" aria-expanded="false"><span class="menu-icon" aria-hidden="true">☰</span>Menu</button>
   <nav class="nav" id="navigation" aria-label="Main navigation">
-    <a href="#home">Meet Steve</a><a href="#pillars">The Short Version</a><a href="#journey">Experience</a><a href="./off-the-clock-v28.html">Off the Clock</a><a href="./lets-talk-v28.html">Let's Talk</a>
+    <a href="#home">Meet Steve</a><a href="#pillars">The Short Version</a><a href="#journey">Experience</a><a href="#values">My Values</a><a href="./off-the-clock-v28.html">Off the Clock</a><a href="./lets-talk-v28.html">Let's Talk</a>
   </nav>
  </div>
 </header>
@@ -947,16 +980,40 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
  </div>
 </section>
 
-<section class="section values" id="values">
- <div class="site-width values-in">
-  <div>
-    <p class="section-label">06 / A few principles</p>
-    <h2 class="section-title">Some things <em>stick with you.</em></h2>
+<section class="section values v28-mission" id="values" aria-labelledby="v28-values-heading">
+ <div class="site-width">
+  <div class="v28-mission-head">
+   <div>
+    <p class="section-label">06 / Mission &amp; values</p>
+    <h2 class="section-title" id="v28-values-heading">What I <em>stand for.</em></h2>
+   </div>
+   <p class="v28-mission-lead">The person I am at work and the person I am away from it shouldn't be two different people. I try to bring the same values to both.</p>
   </div>
-  <div>
-    <p class="principle">Good work is about more than getting the technology running.</p>
-    <p class="details">It's also about listening to people, owning the problem, and doing the job with care. The Air Force values I learned — Integrity First, Service Before Self, and Excellence In All We Do — have stayed with me.</p>
-    <p class="values-aside"><span class="values-quote">“Doing the right thing is never the wrong thing.”</span><span class="values-credit"> — <cite>Ted Lasso</cite></span></p>
+  <div class="v28-mission-grid">
+   <article class="v28-mission-column">
+    <p class="v28-mission-index">01 / IN MY WORK</p>
+    <h3>Fix the problem.<br><em>Respect the person.</em></h3>
+    <p>My mission is to make technology less frustrating and more useful for the people who depend on it. That means being curious before making assumptions, explaining things without talking down to anyone, and taking ownership until the job is done right.</p>
+    <ul class="v28-mission-points">
+     <li><strong>Listen first.</strong> Understand the problem before chasing a solution.</li>
+     <li><strong>Do it right.</strong> Be thorough, honest, and willing to learn.</li>
+     <li><strong>Leave people better off.</strong> A good fix includes the person on the other end.</li>
+    </ul>
+   </article>
+   <article class="v28-mission-column">
+    <p class="v28-mission-index">02 / IN MY LIFE</p>
+    <h3>Show up.<br><em>Be someone people can count on.</em></h3>
+    <p>Family, kindness, and community matter to me. Being a dad to two kids and two bonus kids has a way of keeping things in perspective. I don't have all the answers, and I don't need to make a big speech about what I believe. I'd rather try to show it in how I treat people.</p>
+    <ul class="v28-mission-points">
+     <li><strong>Make time for people.</strong> Especially the ones closest to me.</li>
+     <li><strong>Keep a sense of humor.</strong> Life is serious enough without making every moment serious.</li>
+     <li><strong>Give people a chance.</strong> A little patience can go a long way.</li>
+    </ul>
+   </article>
+  </div>
+  <div class="v28-values-bottom">
+   <p>Some principles have stayed with me, including the Air Force values of <strong>Integrity First, Service Before Self, and Excellence In All We Do.</strong></p>
+   <p class="v28-values-quote">“Doing the right thing is never the wrong thing.” <span>— Ted Lasso</span></p>
   </div>
  </div>
 </section>

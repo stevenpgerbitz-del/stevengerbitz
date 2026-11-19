@@ -480,6 +480,18 @@ footer{background:#1c1e21;color:#c6bfba}
  .pillars-three > .pillar-click .pillar-frame { transition:none }
 }
 
+
+/* V27 – temporary illustrated triptych. Preserve whole-card interaction. */
+.pillars-three .pillar-frame{aspect-ratio:.68;background:#28282a}
+.pillars-three .pillar-frame img{object-fit:cover;filter:none}
+.pillars-three .pillar-photo:nth-child(1) img{object-position:center 52%}
+.pillars-three .pillar-photo:nth-child(2) img{object-position:center 50%}
+.pillars-three .pillar-photo:nth-child(3) img{object-position:center 53%}
+.pillars-three > .pillar-click:hover .pillar-frame img,
+.pillars-three > .pillar-click:focus-visible .pillar-frame img{filter:none;transform:none}
+@media(max-width:720px){.pillars-three .pillar-frame{aspect-ratio:.68}}
+@media(max-width:430px){.pillars-three .pillar-frame{aspect-ratio:.68}}
+
 </style>
 </head>
 <body>
@@ -489,7 +501,7 @@ footer{background:#1c1e21;color:#c6bfba}
   <a class="brand" href="#home" aria-label="Steven Gerbitz, homepage"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">STEVEN GERBITZ<small>My little corner of the internet</small></span></a>
   <button type="button" class="menu-btn" aria-controls="navigation" aria-expanded="false"><span class="menu-icon" aria-hidden="true">☰</span>Menu</button>
   <nav class="nav" id="navigation" aria-label="Main navigation">
-    <a href="#pillars">Three pillars</a><a href="#about">About</a><a href="#journey">My journey</a><a href="#projects">Side projects</a><a href="#values">What matters</a>
+    <a href="#pillars">The Short Version</a><a href="#about">About</a><a href="#journey">My journey</a><a href="#projects">Side projects</a><a href="#values">What matters</a>
   </nav>
  </div>
 </header>
@@ -514,25 +526,25 @@ footer{background:#1c1e21;color:#c6bfba}
 
 <section class="pillars" id="pillars" aria-labelledby="pillars-title">
  <div class="site-width">
-  <p class="section-label">01 / Three things I know a little about</p>
+  <p class="section-label">01 / The Short Version</p>
   <h2 class="pillars-title" id="pillars-title">The cables. The computers. <em>The people.</em></h2>
   <p class="pillars-intro">After more than twenty years in technology, a lot of my experience comes back to these three things. Different kinds of work, but the same approach: figure it out, do it right, and remember who you're helping.</p>
   <div class="pillars-three">
    <a class="pillar-photo pillar-click" href="./stories/fiber.html" aria-label="Read my Fiber Optics story">
-    <div class="pillar-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Fiber_Splice.jpg/960px-Fiber_Splice.jpg" alt="An opened fiber-optic splice enclosure with organized fiber strands and splicing equipment on a workbench" loading="lazy" decoding="async" width="960" height="720"></div>
+    <div class="pillar-frame"><img src="./assets/steven-triptych-fiber-optics.webp" alt="Painted scene of a technician working with a fiber splicer; a red stapler rests on the bench" loading="lazy" decoding="async" width="500" height="958"></div>
     <div class="pillar-caption"><h3>Fiber Optics</h3><p>The hands-on work: getting the connection right, testing it, and making sure it stays right.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
    </a>
    <a class="pillar-photo pillar-click" href="./stories/technical-support.html" aria-label="Read my Technical Support story">
-    <div class="pillar-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Computer_repair_in_progress.jpg/960px-Computer_repair_in_progress.jpg" alt="Hands servicing the inside of a laptop, with its motherboard and cooling system exposed" loading="lazy" decoding="async" width="960" height="636"></div>
+    <div class="pillar-frame"><img src="./assets/steven-triptych-technical-support.webp" alt="Humorous painted scene of a technician with a baseball bat beside a malfunctioning printer and an INITECH mug" loading="lazy" decoding="async" width="850" height="929"></div>
     <div class="pillar-caption"><h3>Technical Support</h3><p>The puzzle: finding out what actually went wrong instead of just guessing at it.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
    </a>
    <a class="pillar-photo pillar-click" href="./stories/customer-service.html" aria-label="Read my Customer Service story">
-    <div class="pillar-frame"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Computer_training_%284428766986%29.jpg/960px-Computer_training_%284428766986%29.jpg" alt="Three people working together around a computer during a community training session" loading="lazy" decoding="async" width="960" height="640"></div>
+    <div class="pillar-frame"><img src="./assets/steven-triptych-customer-service.webp" alt="Painted scene of a technician helping a colleague at a laptop with a TPS report on the desk" loading="lazy" decoding="async" width="500" height="964"></div>
     <div class="pillar-caption"><h3>Customer Service</h3><p>The part that matters most: listening, explaining things clearly, and treating people with respect.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
    </a>
   </div>
   <p class="pillars-reflection">Good connections are about more than cables.</p>
-  <p class="pillars-credit">Illustrative documentary photographs (not Steven or his installations): <a href="https://commons.wikimedia.org/wiki/File:Fiber_Splice.jpg" target="_blank" rel="noopener noreferrer">fiber splice case — Dhaluza (CC BY 3.0)</a>; <a href="https://commons.wikimedia.org/wiki/File:Computer_repair_in_progress.jpg" target="_blank" rel="noopener noreferrer">computer repair — Vintechcomputerservices (CC BY-SA 4.0)</a>; <a href="https://commons.wikimedia.org/wiki/File:Computer_training_(4428766986).jpg" target="_blank" rel="noopener noreferrer">community training — Weldon Kennedy (CC BY 2.0)</a>. Images shown with website cropping.</p>
+  <p class="pillars-credit">Illustrated scenes, not photographs of Steven or actual workplaces. Temporary artwork.</p>
  </div>
 </section>
 

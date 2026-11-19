@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#25272a">
+<meta name="description" content="Hi, I'm Steven Gerbitz. A little about me, my work in technology and telecommunications, and what I like to build.">
+<meta property="og:title" content="Steven Gerbitz | A little about me">
+<meta property="og:description" content="A personal corner of the internet about technology, curiosity, and a little humor.">
+<meta property="og:type" content="website">
+<title>Steven Gerbitz | Temporary Triptych — Version 27 Preview</title>
+<style>
+:root{
+ --night:#25272a;--night-deep:#1b1d20;--night-soft:#343337;
+ --cream:#f5efe4;--cream-bright:#fdfaf3;--paper:#eee7dc;--paper-dark:#e4dacb;
+ --wine:#91494f;--wine-light:#d2a6a0;--gold:#c2a37d;--text:#303035;--muted:#595b5f;
+ --rule:#cdbfaa;--rule-night:#61565a;--serif:Georgia,Cambria,"Times New Roman",serif;--ui:"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--cream);color:var(--text);font:16px/1.75 var(--ui);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #d89469;outline-offset:5px}
+.site-width{max-width:1100px;width:calc(100% - 64px);margin:0 auto}
+.skip{position:absolute;left:16px;top:-100px;background:#fff6e7;color:#212121;padding:10px;z-index:120}
+.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:60;background:#f4eee4f7;border-bottom:1px solid #d2c3b1;backdrop-filter:blur(14px)}
+.header-content{height:77px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{position:relative;display:grid;place-items:center;height:38px;width:38px;flex:none;border:1px solid #a66f70;color:#713b40;font:italic 21px var(--serif)}
+.brand-mark:after{content:"";position:absolute;bottom:-5px;right:-5px;height:6px;width:6px;background:var(--wine)}
+.brand-name{font-size:15px;font-weight:800;letter-spacing:.015em;line-height:1.1;white-space:nowrap}
+.brand-name small{display:block;margin-top:5px;font-size:9px;line-height:1.3;color:#816363;letter-spacing:.18em;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{font-size:12px;font-weight:700;color:#555054;transition:color .2s}
+.nav a:hover{color:var(--wine)}
+.menu-btn{display:none;align-items:center;gap:8px;padding:8px 11px;border:1px solid #b8a89b;background:transparent;border-radius:2px;font-size:12px;font-weight:800;color:#5d4346}
+.menu-icon{font-size:18px;line-height:1}
+.hero{position:relative;overflow:hidden;background:linear-gradient(118deg,#25272a,#2d2b2e 67%,#353033);color:#f5eee3}
+.hero:after{content:"";position:absolute;right:-60px;bottom:-210px;width:500px;height:500px;border-radius:50%;border:1px solid #87717635;box-shadow:0 0 0 63px #a9787810,0 0 0 130px #a9787808;pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:8%;align-items:center;padding:82px 0 85px}
+.eyebrow{font-size:11px;letter-spacing:.17em;color:#dbafa4;text-transform:uppercase;font-weight:800;margin:0 0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:-.035em}
+h1{font-size:clamp(3.8rem,7.4vw,6.6rem);margin:0 0 26px}
+h1 .hello{display:block;color:#f2e6d6}
+h1 em{display:block;font-style:italic;color:#dba9a3}
+.hero-lead{color:#f0e7dd;font-size:clamp(1.16rem,1.8vw,1.42rem);line-height:1.55;margin:0 0 19px;max-width:630px}
+.hero-text{color:#c9c4bf;max-width:590px;font-size:15px;line-height:1.85;margin:0}
+.hero-link{display:inline-flex;align-items:center;gap:18px;margin-top:27px;font-size:13px;font-weight:800;border-bottom:1px solid #bd8c8c;padding-bottom:7px;color:#f5e3dc}
+.hero-link:hover{color:#fff}
+.hero-link span{font-size:20px;font-weight:400;line-height:1}
+.desk-note{position:relative;background:#f7f0e3;color:#353336;padding:27px 31px 27px 33px;border:1px solid #d4bba3;box-shadow:12px 13px 0 #120b1040;transform:rotate(1.4deg)}
+.desk-note:before{content:"";position:absolute;top:0;left:28px;width:22px;height:42px;border-left:2px solid #ad9292;border-right:2px solid #ad9292;border-bottom:2px solid #ad9292;border-radius:0 0 13px 13px;transform:translateY(-15px);opacity:.65}
+.desk-note .note-overline{font:800 10px/1.5 var(--ui);text-transform:uppercase;letter-spacing:.2em;color:#8f4a4e;margin:0 0 19px;padding-left:10px}
+.desk-note h2{font:italic 400 clamp(1.45rem,2.5vw,2rem)/1.38 var(--serif);letter-spacing:-.015em;margin:0 0 13px}
+.desk-note p{font-size:13px;color:#605b58;margin:0 0 22px;line-height:1.8}
+.desk-note .sketch{width:100%;height:auto;display:block;opacity:.95}
+.section{padding:87px 0}
+.section-label{margin:0 0 16px;color:#8e464e;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.18em}
+h2.section-title{font-size:clamp(2.25rem,4.5vw,3.75rem);margin:0 0 23px;max-width:760px}
+h2.section-title em{font-style:italic;color:var(--wine)}
+.about{background:var(--cream-bright)}
+.about-in{display:grid;grid-template-columns:1.15fr .65fr;gap:13%;align-items:start}
+.copy{max-width:730px}
+.copy p{font-size:16px;line-height:1.92;color:#4d4d50;margin:0 0 17px}
+.copy p:last-child{margin-bottom:0}
+.margin-note{border-left:2px solid #a66368;padding:11px 0 12px 24px;margin-top:70px}
+.margin-note .hand{color:#6f4245;font:italic 400 26px/1.43 var(--serif);margin:0 0 12px}
+.margin-note small{font-size:12px;color:#686360;line-height:1.7;display:block}
+.journey{background:var(--paper);border-top:1px solid #d8ccbe}
+.journey-intro{max-width:750px;color:#5d5c5c;font-size:15px;margin:0 0 29px}
+.history{position:relative;margin-left:12px;border-left:1px solid #b69d94}
+.stop{position:relative;padding:1px 0 24px 35px;margin-bottom:18px}
+.stop:before{content:"";position:absolute;width:11px;height:11px;border:3px solid #914a51;background:#f5eee4;border-radius:50%;left:-6px;top:7px}
+.stop:last-child{margin-bottom:0;padding-bottom:0}
+.stop time{color:#8c4a50;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.stop h3{font-size:23px;margin:4px 0 2px}
+.stop .jobtitle{font-size:13px;color:#65545a;font-weight:700;margin:0 0 8px}
+.stop .summary{font-size:14px;line-height:1.76;color:#5b5b5d;margin:0;max-width:750px}
+.more-work{margin:26px 0 0 46px}
+details summary{cursor:pointer;display:inline-flex;align-items:center;gap:11px;border-bottom:1px solid #aa8581;padding-bottom:7px;font-size:13px;font-weight:750;color:#7d3f45;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";font-size:18px;font-weight:400}
+details[open] summary::before{content:"−"}
+.more-content{padding:13px 0 0;color:#5f5c5a;font-size:13px;line-height:2}
+.tinkering{background:#27282c;color:#ede8df}
+.tinkering .section-label{color:#d9aaa5}
+.tinkering .section-title{color:#f3e8dc}
+.tinkering .section-title em{color:#dfada7}
+.tinkering-intro{color:#c7c1be;max-width:720px;margin:0 0 28px;font-size:15px;line-height:1.85}
+.project-rows{border-top:1px solid #5b5355}
+.project-row{display:grid;grid-template-columns:40px minmax(0,1fr) minmax(0,1.1fr);gap:17px;padding:22px 0;border-bottom:1px solid #5b5355;align-items:start}
+.project-num{font:italic 21px var(--serif);color:#cc9f9b;line-height:1.35}
+.project-row h3{font-size:25px;margin:0}
+.project-row p{font-size:13px;color:#c4c0bd;line-height:1.8;margin:0}
+.project-caption{font-size:12px;color:#aca8a6;line-height:1.8;margin:25px 0 0;max-width:800px}
+.values{background:var(--cream-bright);border-top:1px solid #ddd2c6}
+.values-in{display:grid;grid-template-columns:1fr 1.1fr;gap:9%;align-items:center}
+.values h2.section-title{margin-bottom:10px}
+.values .principle{font:italic 400 clamp(1.55rem,2.7vw,2.45rem)/1.4 var(--serif);color:#733c42;margin:0 0 13px}
+.values .details{font-size:14px;color:#5b5a5b;line-height:1.8;margin:0}
+footer{background:#1c1e21;color:#c6bfba}
+.footer-content{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:26px 0}
+.footer-content strong{font-size:14px;color:#f3e7dc}
+.footer-content span{font-size:12px}
+@media(max-width:930px){
+ .hero-inner{gap:5%;padding:75px 0}
+ .desk-note{padding:24px 23px}
+ .about-in{gap:7%}
+ .margin-note{margin-top:45px}
+}
+@media(max-width:720px){
+ html{scroll-padding-top:67px}
+ .site-width{width:calc(100% - 38px)}
+ .header-content{height:67px}
+ .brand-mark{height:34px;width:34px;font-size:19px}
+ .brand-name{font-size:14px}
+ .brand-name small{font-size:8px}
+ .menu-btn{display:flex}
+ .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fbf7ef;border-bottom:1px solid #d2c3b1;padding:11px 19px;box-shadow:0 14px 18px #0002}
+ .nav.open{display:flex}
+ .nav a{display:block;padding:11px 5px;border-bottom:1px solid #e1d9cb;font-size:13px}
+ .hero-inner{grid-template-columns:1fr;gap:32px;padding:57px 0 60px}
+ h1{font-size:clamp(3.55rem,11vw,5.1rem);margin:0 0 19px}
+ .eyebrow{margin-bottom:16px}
+ .hero-lead{font-size:1.22rem}
+ .hero-text{font-size:14px;line-height:1.75}
+ .desk-note{transform:rotate(0);box-shadow:6px 7px 0 #120b1026;max-width:580px;padding:24px 23px 19px}
+ .desk-note h2{font-size:1.56rem;max-width:480px}
+ .desk-note p{margin-bottom:10px}
+ .desk-note .sketch{max-width:430px}
+ .section{padding:65px 0}
+ .about-in,.values-in{grid-template-columns:1fr;gap:22px}
+ .margin-note{margin-top:2px;padding-left:20px}
+ .values-in{gap:24px}
+ .project-row{grid-template-columns:35px 1fr;gap:9px}
+ .project-row p{grid-column:2}
+}
+@media(max-width:450px){
+ .site-width{width:calc(100% - 34px)}
+ .hero-inner{padding:44px 0 49px;gap:27px}
+ h1{font-size:clamp(3.2rem,13vw,4.1rem)}
+ .hero-lead{font-size:1.12rem}
+ .eyebrow{font-size:10px;letter-spacing:.115em}
+ .hero-link{margin-top:22px}
+ .desk-note .note-overline{font-size:9px}
+ .desk-note .sketch{height:72px}
+ .section{padding:55px 0}
+ h2.section-title{font-size:2.45rem}
+ .stop{padding-left:25px}
+ .more-work{margin-left:35px}
+ .footer-content{align-items:start;flex-direction:column;gap:5px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* V7 — lighthearted introduction, a grounded philosophy */
+.hero h1{font-size:clamp(3.45rem,5.95vw,5.7rem);line-height:1.09;max-width:800px}
+.hero h1 em{line-height:1.12}
+.hero .punchline{color:#f3d2cc;border-bottom:2px solid #bc777c;white-space:nowrap}
+.desk-note{transform:rotate(-.9deg)}
+.desk-note .note-overline{margin-bottom:17px}
+.desk-note h2{font-size:clamp(1.55rem,2.4vw,1.95rem)}
+@media(max-width:720px){
+ .hero h1{font-size:clamp(3.05rem,9.3vw,4.65rem);line-height:1.12}
+ .desk-note{transform:none}
+}
+@media(max-width:450px){
+ .hero h1{font-size:clamp(2.9rem,10vw,3.55rem)}
+ .desk-note h2{font-size:1.47rem}
+}
+
+
+/* V8 — three equal photographs: real scenes, no sales-brochure overlays */
+.pillars{background:#f9f5ed;border-bottom:1px solid #d5c9ba;padding:67px 0 70px}
+.pillars .section-label{margin-bottom:12px}
+.pillars-title{font:400 clamp(2.25rem,4vw,3.3rem)/1.15 var(--serif);letter-spacing:-.03em;color:#322d2f;margin:0 0 14px}
+.pillars-title em{color:#8b474b;font-style:italic}
+.pillars-intro{max-width:790px;color:#615b5a;font-size:15px;margin:0 0 31px;line-height:1.83}
+.pillars-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.pillar-photo{margin:0;min-width:0}
+.pillar-frame{aspect-ratio:1.22;overflow:hidden;background:#d0c7ba;border:1px solid #d1c4b5;position:relative}
+.pillar-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.76) contrast(1.04)}
+.pillar-photo:nth-child(1) img{object-position:64% center}
+.pillar-photo:nth-child(2) img{object-position:center}
+.pillar-photo:nth-child(3) img{object-position:45% center}
+.pillar-caption{padding:16px 0 0}
+.pillar-caption h3{font:400 25px/1.25 var(--serif);color:#2e2d30;margin:0 0 8px}
+.pillar-caption p{font-size:14px;color:#575658;line-height:1.75;margin:0}
+.pillar-emphasis{display:block;height:2px;width:42px;background:#9a5960;margin:13px 0 0}
+.pillars-reflection{font:italic 21px/1.4 var(--serif);color:#713f44;margin:27px 0 0}
+.pillars-credit{font-size:10px;line-height:1.7;color:#79716e;margin:16px 0 0;max-width:950px}
+.pillars-credit a{color:#7e4c50;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:800px){.pillars-three{gap:13px}.pillar-caption h3{font-size:22px}.pillar-caption p{font-size:13px}}
+@media(max-width:720px){.pillars{padding:52px 0 56px}.pillars-title{font-size:2.4rem}.pillars-three{grid-template-columns:1fr;max-width:520px;gap:27px}.pillar-frame{aspect-ratio:1.7}.pillar-caption{padding:11px 0 0}.pillar-caption h3{font-size:25px}.pillar-caption p{font-size:14px}.pillar-emphasis{margin-top:10px}}
+@media(max-width:430px){.pillars{padding:46px 0 50px}.pillars-title{font-size:2.15rem}.pillar-frame{aspect-ratio:1.45}}
+
+
+/* V9 — each pillar opens its personal story */
+.pillar-click{display:block;color:inherit;text-decoration:none}
+.pillar-click .pillar-frame{transition:border-color .2s,box-shadow .2s}
+.pillar-click .pillar-frame img{transition:transform .3s ease,filter .3s ease}
+.pillar-click:hover .pillar-frame,.pillar-click:focus-visible .pillar-frame{border-color:#96575a;box-shadow:0 0 0 2px #96575a25}
+.pillar-click:hover .pillar-frame img,.pillar-click:focus-visible .pillar-frame img{transform:scale(1.035);filter:saturate(.91) contrast(1.05)}
+.pillar-click:hover .pillar-caption h3{color:#824047}
+.pillar-click:focus-visible{outline:3px solid #a35b60;outline-offset:5px;border-radius:1px}
+.read-story{display:inline-flex;align-items:center;gap:12px;margin-top:13px;color:#82454b;font-size:12px;font-weight:800;border-bottom:1px solid #b3888c;padding-bottom:4px}
+.read-story span{font-size:16px;font-weight:400}
+@media(prefers-reduced-motion:reduce){.pillar-click .pillar-frame,.pillar-click .pillar-frame img{transition:none}}
+
+
+/* V10 — career timeline as quiet, expandable previews */
+.history{margin-left:12px}
+.history .stop{padding-bottom:6px;margin-bottom:13px}
+.history .stop::before{top:19px}
+.job-details>summary{display:block;cursor:pointer;list-style:none;padding:9px 12px 10px 0;border:0;border-radius:2px;color:inherit}
+.job-details>summary::-webkit-details-marker{display:none}
+.job-details>summary::before{display:none}
+.job-details>summary:focus-visible{outline:2px solid #a05c63;outline-offset:3px}
+.job-details>summary:hover .job-name,.job-details[open] .job-name{color:#87484e}
+.job-details .job-preview{display:block}
+.job-details .job-name{display:block;font:400 23px/1.45 var(--serif);margin:4px 0 1px;transition:color .2s}
+.job-details .jobtitle{display:block;margin:0 0 7px}
+.job-details .summary{display:block;margin:0;max-width:730px}
+.job-prompt{display:inline-flex;gap:12px;align-items:center;color:#824a51;font:700 12px/1.5 var(--sans,Arial,sans-serif);border-bottom:1px solid #d1b5af;margin-top:10px;padding-bottom:2px;letter-spacing:0}
+.job-plus{font-size:17px;font-weight:400;line-height:1}
+.job-details[open] .job-prompt .job-plus{font-size:0}
+.job-details[open] .job-prompt .job-plus::after{content:"−";font-size:17px}
+.job-details[open] .job-prompt{font-size:0}
+.job-details[open] .job-prompt::before{content:"Show less";font-size:12px}
+.job-expanded{max-width:740px;margin:1px 0 21px;padding:14px 18px;background:#efe7dc;border-left:2px solid #a47479}
+.job-expanded p{margin:0;color:#524e4e;font-size:14px;line-height:1.8}
+@media(max-width:650px){.job-details .job-name{font-size:21px}.job-expanded{padding:12px 14px}}
+@media(prefers-reduced-motion:reduce){.job-details .job-name{transition:none}}
+
+
+/* V11 — full job details behind small, curious previews */
+.job-expanded ul{margin:0;padding-left:20px;color:#524e4e;font-size:14px;line-height:1.75}
+.job-expanded li{padding-left:3px;margin:0 0 9px}
+.job-expanded li:last-child{margin-bottom:0}
+.earlier-jobs>.more-content{padding-top:20px}
+.earlier-jobs .history{margin-left:12px}
+.earlier-jobs .stop{margin-bottom:7px}
+.earlier-jobs .job-name{font-size:20px}
+.earlier-jobs .job-details>summary{padding-bottom:8px}
+.earlier-jobs .job-expanded{background:#eee5d8}
+.earlier-jobs>summary{display:inline-flex}
+
+
+/* V13 — details with context and meaningful specifics; teaser remains brief */
+.job-expanded{margin-top:8px;padding:22px 26px 24px}
+.job-expanded .job-intro{font-size:15px;line-height:1.9;color:#444448;margin:0 0 21px;max-width:700px}
+.job-expanded .job-section-head{font:700 11px/1.5 var(--sans,Arial,sans-serif);text-transform:uppercase;letter-spacing:.12em;color:#884a50;margin:23px 0 11px}
+.job-expanded ul{margin-bottom:15px}
+.job-expanded li{line-height:1.8;margin-bottom:10px}
+.job-expanded .job-tech{font-size:13px;line-height:1.85;color:#555155;margin:0 0 20px}
+.job-expanded .job-reflection{font:italic 400 18px/1.55 var(--serif);margin:22px 0 0;border-top:1px solid #d7c6bb;padding-top:16px;color:#694b4f}
+@media(max-width:600px){.job-expanded{padding:18px 17px}.job-expanded .job-intro{font-size:14px}.job-expanded .job-reflection{font-size:17px}}
+
+
+/* V15 – compact opening section only; content and all other sections unchanged */
+.hero-inner{
+  grid-template-columns:minmax(0,1.3fr) minmax(265px,.7fr);
+  gap:6%;
+  padding:49px 0 52px;
+  align-items:center;
+}
+.hero h1{
+  font-size:clamp(2.95rem,4.1vw,3.85rem);
+  line-height:1.09;
+  margin:0 0 19px;
+  letter-spacing:-.035em;
+}
+.hero h1 em{line-height:1.12}
+.hero .eyebrow{margin-bottom:13px}
+.hero-lead{font-size:clamp(1.02rem,1.35vw,1.15rem);line-height:1.52;margin-bottom:11px}
+.hero-text{font-size:14px;line-height:1.7}
+.hero-link{margin-top:19px}
+.desk-note{padding:23px 26px 19px}
+.desk-note .note-overline{margin-bottom:11px}
+.desk-note h2{font-size:clamp(1.35rem,1.8vw,1.6rem);line-height:1.35;margin-bottom:8px}
+.desk-note p{font-size:12px;line-height:1.65;margin-bottom:13px}
+.desk-note .sketch{max-height:77px}
+@media(max-width:930px){
+ .hero-inner{gap:5%;padding:44px 0 46px}
+ .hero h1{font-size:clamp(2.65rem,5.35vw,3.5rem)}
+ .desk-note{padding:20px 21px 17px}
+}
+@media(max-width:720px){
+ .hero-inner{grid-template-columns:1fr;gap:23px;padding:34px 0 38px}
+ .hero h1{font-size:clamp(2.4rem,7.4vw,3.25rem);margin-bottom:14px}
+ .hero-lead{font-size:1.04rem}
+ .hero-text{font-size:13px}
+ .desk-note{max-width:570px;padding:19px 21px 14px}
+ .desk-note h2{font-size:1.45rem}
+ .desk-note .sketch{height:65px}
+}
+@media(max-width:450px){
+ .hero-inner{padding:30px 0 33px;gap:21px}
+ .hero h1{font-size:clamp(2.15rem,8.5vw,2.55rem)}
+ .hero .eyebrow{font-size:9px;margin-bottom:11px}
+ .hero-lead{font-size:1rem;line-height:1.5}
+ .hero-link{margin-top:15px}
+ .desk-note{padding:18px 18px 13px}
+ .desk-note h2{font-size:1.32rem}
+ .desk-note .sketch{height:53px}
+}
+
+
+/* V16 — no paper note; a quiet signal trace and a subtle musical wink */
+.hero-inner{grid-template-columns:minmax(0,1.25fr) minmax(275px,.75fr);gap:6%}
+.trace-piece{min-width:0;position:relative;margin:0;display:flex;flex-direction:column;align-items:stretch;justify-content:center}
+.trace-art{width:100%;height:auto;display:block;max-height:273px;overflow:visible}
+.trace-caption{font:italic 400 clamp(1.1rem,1.5vw,1.4rem)/1.45 var(--serif);letter-spacing:-.018em;color:#e7c9c3;margin:3px 10px 0;text-align:center}
+@media(max-width:930px){
+ .hero-inner{grid-template-columns:minmax(0,1.15fr) minmax(235px,.85fr);gap:4%}
+ .trace-caption{font-size:1.13rem}
+}
+@media(max-width:720px){
+ .hero-inner{grid-template-columns:1fr;gap:13px}
+ .trace-piece{max-width:550px;width:100%;margin:2px auto 0}
+ .trace-art{max-height:174px}
+ .trace-caption{font-size:1.08rem;margin:-3px 0 0}
+}
+@media(max-width:450px){
+ .trace-art{max-height:145px}
+ .trace-caption{font-size:1rem}
+}
+
+
+/* V18: two Ted Lasso reminders integrated quietly, not in new cards */
+.margin-note cite,.values-aside cite{font-style:normal}
+.values-aside{margin:18px 0 0;padding-top:13px;border-top:1px solid #dbccc2;color:#755358;font-size:13px;line-height:1.6}
+.values-quote{font-family:var(--serif);font-size:clamp(1rem,1.4vw,1.17rem);font-style:italic}
+.values-credit{font-size:11px;letter-spacing:.025em;color:#817374;white-space:nowrap}
+@media(max-width:720px){.values-aside{margin-top:16px;padding-top:12px}.values-credit{white-space:normal}}
+
+
+/* V19 — text-only, restrained hero quote in place of troubleshooting graphic */
+.hero-thought{
+  align-self:center;
+  padding:4px 0 5px 25px;
+  border-left:2px solid rgba(219,169,163,.62);
+  min-width:0;
+  max-width:392px;
+}
+.hero-thought-quote{
+  font:italic 400 clamp(1.85rem,2.45vw,2.6rem)/1.23 var(--serif);
+  letter-spacing:-.025em;
+  color:#f3e9dc;
+  margin:0 0 9px;
+}
+.hero-thought-quote span{color:#dfa9a3}
+.hero-thought-credit{
+  color:#d8b0ab;
+  font-size:11px;
+  letter-spacing:.08em;
+  margin:0 0 24px;
+}
+.hero-thought-copy{
+  color:#cbc3bf;
+  font-size:13px;
+  line-height:1.75;
+  margin:0;
+  max-width:350px;
+}
+@media(max-width:930px){
+ .hero-thought{padding-left:18px}
+ .hero-thought-quote{font-size:clamp(1.65rem,2.5vw,2.1rem)}
+ .hero-thought-credit{margin-bottom:14px}
+}
+@media(max-width:720px){
+ .hero-thought{max-width:none;width:100%;margin-top:5px;padding:0 0 0 18px}
+ .hero-thought-quote{font-size:clamp(1.68rem,5.8vw,2.16rem)}
+ .hero-thought-credit{margin-bottom:9px}
+ .hero-thought-copy{max-width:540px;font-size:13px}
+}
+@media(max-width:450px){
+ .hero-thought{padding-left:15px}
+ .hero-thought-quote{font-size:1.6rem}
+ .hero-thought-copy{line-height:1.65}
+}
+
+
+/* V20 — move each complete pillar (photo, label, summary, CTA) as one unit. */
+.pillar-click{
+  position:relative;
+  transform:translateY(0);
+  transition:transform .26s cubic-bezier(.2,.75,.25,1);
+  will-change:transform;
+}
+@media(hover:hover) and (pointer:fine){
+  .pillar-click:hover{
+    transform:translateY(-7px);
+  }
+}
+.pillar-click:focus-visible{
+  transform:translateY(-5px);
+}
+.pillar-click:active{
+  transform:translateY(-2px);
+  transition-duration:.12s;
+}
+/* Keep the image fixed within its frame so only the complete group moves. */
+.pillar-click:hover .pillar-frame img,
+.pillar-click:focus-visible .pillar-frame img{
+  transform:none;
+}
+.pillar-click .pillar-frame img{
+  transition:filter .26s ease;
+}
+.pillar-click:hover .read-story,
+.pillar-click:focus-visible .read-story{
+  color:#783c43;
+}
+@media(prefers-reduced-motion:reduce){
+  .pillar-click,
+  .pillar-click:focus-visible,
+  .pillar-click:active{
+    transform:none;
+    transition:none;
+    will-change:auto;
+  }
+  .pillar-click:hover{
+    transform:none;
+  }
+}
+
+
+/* V23: discreet Office Space nod, revealed only in Peabody's expanded job details. */
+.job-easter-egg{color:#877a76;font-size:11px;font-style:italic;line-height:1.65;margin:11px 0 0;letter-spacing:.005em}
+
+/* V24 — make the WHOLE three-pillar group respond distinctly.
+   All child parts travel together because the link itself is transformed.
+   Previous 7px hover was easy to miss and excluded non-hover devices. */
+.pillars-three > .pillar-click {
+  display:block;
+  position:relative;
+  cursor:pointer;
+  transform:translate3d(0,0,0);
+  transition:transform 270ms cubic-bezier(.18,.85,.25,1);
+}
+.pillars-three > .pillar-click .pillar-frame {
+  transition:border-color 230ms ease, box-shadow 230ms ease;
+}
+.pillars-three > .pillar-click:hover,
+.pillars-three > .pillar-click:focus-visible {
+  transform:translate3d(0,-12px,0);
+}
+.pillars-three > .pillar-click:hover .pillar-frame,
+.pillars-three > .pillar-click:focus-visible .pillar-frame {
+  border-color:#97565e;
+  box-shadow:0 11px 22px rgba(51,36,36,.16),0 0 0 1px rgba(145,73,79,.24);
+}
+.pillars-three > .pillar-click:hover .pillar-caption h3,
+.pillars-three > .pillar-click:focus-visible .pillar-caption h3{
+  color:#824047;
+}
+.pillars-three > .pillar-click:hover .read-story,
+.pillars-three > .pillar-click:focus-visible .read-story{
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:4px;
+}
+.pillars-three > .pillar-click:active {
+  transform:translate3d(0,-6px,0);
+  transition-duration:90ms;
+}
+.pillars-three > .pillar-click:hover .pillar-frame img,
+.pillars-three > .pillar-click:focus-visible .pillar-frame img {
+  transform:none;
+}
+@media (prefers-reduced-motion: reduce) {
+ .pillars-three > .pillar-click,
+ .pillars-three > .pillar-click:hover,
+ .pillars-three > .pillar-click:focus-visible,
+ .pillars-three > .pillar-click:active {
+   transform:none;
+   transition:none;
+ }
+ .pillars-three > .pillar-click .pillar-frame { transition:none }
+}
+
+
+/* V27 – temporary illustrated triptych. Preserve whole-card interaction. */
+.pillars-three .pillar-frame{aspect-ratio:.68;background:#28282a}
+.pillars-three .pillar-frame img{object-fit:cover;filter:none}
+.pillars-three .pillar-photo:nth-child(1) img{object-position:center 52%}
+.pillars-three .pillar-photo:nth-child(2) img{object-position:center 50%}
+.pillars-three .pillar-photo:nth-child(3) img{object-position:center 53%}
+.pillars-three > .pillar-click:hover .pillar-frame img,
+.pillars-three > .pillar-click:focus-visible .pillar-frame img{filter:none;transform:none}
+@media(max-width:720px){.pillars-three .pillar-frame{aspect-ratio:.68}}
+@media(max-width:430px){.pillars-three .pillar-frame{aspect-ratio:.68}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+ <div class="site-width header-content">
+  <a class="brand" href="#home" aria-label="Steven Gerbitz, homepage"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">STEVEN GERBITZ<small>My little corner of the internet</small></span></a>
+  <button type="button" class="menu-btn" aria-controls="navigation" aria-expanded="false"><span class="menu-icon" aria-hidden="true">☰</span>Menu</button>
+  <nav class="nav" id="navigation" aria-label="Main navigation">
+    <a href="#pillars">The Short Version</a><a href="#about">About</a><a href="#journey">My journey</a><a href="#projects">Side projects</a><a href="#values">What matters</a>
+  </nav>
+ </div>
+</header>
+<main id="main">
+<section class="hero" id="home">
+ <div class="site-width hero-inner">
+  <div>
+   <p class="eyebrow">Oh, hi, nice to meet you.</p>
+   <h1><span class="hello">Hi, it's me.</span><em>I'm the problem... <span class="punchline">solver.</span></em></h1>
+   <p class="hero-lead">I'm Steve. Technology and I have been working through our differences for more than 20 years. Sometimes it cooperates. Sometimes it has other plans.</p>
+   <p class="hero-text">I've spent years installing and troubleshooting fiber-optic service out in the field, and just as many helping people with technology in places like coal mines and schools. Different environments, different challenges, but I've always enjoyed figuring out what went wrong, getting things working again, and helping the people who depend on them.</p>
+   <a class="hero-link" href="#pillars">Get to know me <span aria-hidden="true">↘</span></a>
+  </div>
+  <aside class="hero-thought" aria-label="A thought on how I approach problems">
+   <p class="hero-thought-quote">“Be curious,<span> not judgmental.</span>”</p>
+   <p class="hero-thought-credit">— Ted Lasso</p>
+   <p class="hero-thought-copy">Whether I’m solving a technical problem or helping someone through one, I’d rather understand what’s really going on than jump to conclusions.</p>
+  </aside>
+ </div>
+</section>
+
+
+<section class="pillars" id="pillars" aria-labelledby="pillars-title">
+ <div class="site-width">
+  <p class="section-label">01 / The Short Version</p>
+  <h2 class="pillars-title" id="pillars-title">The cables. The computers. <em>The people.</em></h2>
+  <p class="pillars-intro">After more than twenty years in technology, a lot of my experience comes back to these three things. Different kinds of work, but the same approach: figure it out, do it right, and remember who you're helping.</p>
+  <div class="pillars-three">
+   <a class="pillar-photo pillar-click" href="./stories/fiber-v26.html" aria-label="Read my Fiber Optics story">
+    <div class="pillar-frame"><img src="./assets/steven-triptych-fiber-optics.webp" alt="Painted scene of a technician working with a fiber splicer; a red stapler rests on the bench" loading="lazy" decoding="async" width="500" height="958"></div>
+    <div class="pillar-caption"><h3>Fiber Optics</h3><p>The hands-on work: getting the connection right, testing it, and making sure it stays right.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
+   </a>
+   <a class="pillar-photo pillar-click" href="./stories/technical-support-v26.html" aria-label="Read my Technical Support story">
+    <div class="pillar-frame"><img src="./assets/steven-triptych-technical-support.webp" alt="Humorous painted scene of a technician with a baseball bat beside a malfunctioning printer and an INITECH mug" loading="lazy" decoding="async" width="850" height="929"></div>
+    <div class="pillar-caption"><h3>Technical Support</h3><p>The puzzle: finding out what actually went wrong instead of just guessing at it.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
+   </a>
+   <a class="pillar-photo pillar-click" href="./stories/customer-service-v26.html" aria-label="Read my Customer Service story">
+    <div class="pillar-frame"><img src="./assets/steven-triptych-customer-service.webp" alt="Painted scene of a technician helping a colleague at a laptop with a TPS report on the desk" loading="lazy" decoding="async" width="500" height="964"></div>
+    <div class="pillar-caption"><h3>Customer Service</h3><p>The part that matters most: listening, explaining things clearly, and treating people with respect.</p><span class="pillar-emphasis" aria-hidden="true"></span><span class="read-story">Read my story <span aria-hidden="true">↗</span></span></div>
+   </a>
+  </div>
+  <p class="pillars-reflection">Good connections are about more than cables.</p>
+  <p class="pillars-credit">Illustrated scenes, not photographs of Steven or actual workplaces. Temporary artwork.</p>
+ </div>
+</section>
+
+<section class="section about" id="about">
+ <div class="site-width about-in">
+  <div class="copy">
+   <p class="section-label">02 / About me</p>
+   <h2 class="section-title">A little curiosity goes a <em>long way.</em></h2>
+   <p>I've spent more than 20 years working with technology in all sorts of places: classrooms, mines, homes, businesses, and some pretty remote communications sites.</p>
+   <p>I've been the person answering the phone, the one standing in front of the equipment, and the one showing a newer technician how to get a job done right.</p>
+   <p>What I enjoy most hasn't really changed: finding out what went wrong, helping someone, and making sure the fix actually holds.</p>
+  </div>
+  <aside class="margin-note">
+   <p class="hand">I'm serious about the work. Not so serious that I can't laugh at myself.</p>
+   <small>One thing I've learned: patience and a sense of humor go a long way in technical support.</small>
+  </aside>
+ </div>
+</section>
+
+<section class="section journey" id="journey">
+ <div class="site-width">
+  <p class="section-label">03 / The journey</p>
+  <h2 class="section-title">A few places I've <em>been.</em></h2>
+  <p class="journey-intro">Just a few lines from each stop along the way. If something catches your eye, open it up.</p>
+  <div class="history">
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Aug 2025 — Present</time>
+      <span class="job-name">Des Moines Public Schools</span>
+      <span class="jobtitle">Information Technology Specialist</span>
+      <span class="summary">A school day doesn't wait for a computer to cooperate.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">School technology has to work for everyone who relies on it. I support staff members across elementary schools and help keep the devices and systems they use running, including technology used by students.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Investigate hardware, Windows software, device connectivity, and other technology problems reported by staff members throughout the schools.</li><li>Set up, repair, update, and help deploy staff computers, student iPads, and other school devices.</li><li>Use Mosyle for Apple device management and work with Microsoft Intune and Active Directory as part of support and device workflows.</li><li>Assist with hardware and user setup, inventory records, asset tagging, provisioning, and device handoffs.</li><li>Take part in team-based district rollouts, including a distribution of more than 1,500 tablets and VoIP phone deployments.</li><li>Support audiovisual, phone, network cabling, and other school technology issues, while explaining fixes in plain language.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Windows • iPadOS • Mosyle MDM • Microsoft Intune • Active Directory • classroom AV • VoIP</p>
+     <p class="job-reflection">The technology matters, but so does getting a staff member back to their work without making a frustrating problem even more complicated.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Apr — Aug 2025</time>
+      <span class="job-name">MetroNet</span>
+      <span class="jobtitle">Fiber Technician</span>
+      <span class="summary">Sometimes it really is the cable. Finding which one is the interesting part.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">This was hands-on fiber service work from the customer connection back toward the distribution network. A big part of the job was figuring out where the signal stopped behaving and getting things working again.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Installed, serviced, disconnected, and modified fiber-to-the-premises connections at homes and businesses.</li><li>Tracked down signal and connectivity problems across distribution terminals, ONTs, and customer-premises equipment.</li><li>Used optical testing and fault-finding methods to isolate damaged or underperforming connections.</li><li>Performed fiber splicing and replaced damaged customer service drops when repairs called for it.</li><li>Worked directly with customers to explain the service, their equipment, and practical Wi-Fi questions.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">FTTP • fiber splicing • optical testing • ONTs • customer drops • Wi-Fi troubleshooting</p>
+     <p class="job-reflection">A working connection at the end is the goal. Finding and fixing the actual cause is the satisfying part.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Oct 2019 — Apr 2025</time>
+      <span class="job-name">Vantage Point Solutions</span>
+      <span class="jobtitle">Integration Services Technician / Fiber Technician</span>
+      <span class="summary">Twenty-seven states, a lot of fiber, and a few stories from the road.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">This was the kind of work where you could be at a customer's home one week and a business installation somewhere else the next. Over roughly five and a half years, the job took me across 27 states.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Installed and serviced fiber-optic infrastructure in residential homes and commercial or business locations.</li><li>Routed and terminated fiber-optic, CAT5, CAT6, and coaxial cabling with attention to safe, neat workmanship.</li><li>Performed fusion splicing, connector work, and testing using OTDRs, optical power meters, and visual fault locators.</li><li>Documented installations and performed quality checks so the work could be supported after I left.</li><li>Trained approximately 15 new fiber-installation technicians individually, one trainee at a time, on live residential and commercial installation jobs.</li><li>Demonstrated installation methods, safety, independent troubleshooting, and how to recognize work that needs to be corrected.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Fiber fusion splicing • OTDR • optical power meter • VFL • CAT5/CAT6 • coax • QA documentation</p>
+     <p class="job-reflection">Good work is still good work when somebody else opens the enclosure later. That's always mattered to me.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Oct 2015 — Aug 2019</time>
+      <span class="job-name">Peabody Energy</span>
+      <span class="jobtitle">Onsite Support Specialist — IT</span>
+      <span class="summary">Three working mines. Plenty of technology. Not exactly your average office.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">Supporting IT at three working coal mines came with some unusual environments and a wide mix of support requests. It was practical, onsite work: help the person, fix the equipment, and keep the operation moving.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Provided onsite desktop, printer, network, account, and application support to employees across three mining locations.</li><li>Repaired and replaced computer hardware, prepared workstations, and helped with equipment imaging and lifecycle work.</li><li>Worked with the IT team on a large Dell motherboard replacement project involving approximately 500 systems.</li><li>Participated in workstation refreshes and VoIP phone deployments as part of broader team efforts.</li><li>Supported Active Directory administration and workstation or printing issues within the onsite support role.</li><li>Wrote Windows batch scripts to make repetitive tasks less repetitive, and kept accurate inventory and work records.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Windows • Active Directory • Dell hardware • imaging • printers • VoIP • Windows batch scripting</p>
+     <p class="job-reflection">There's a lot more technology at a working mine than most people probably expect.</p>
+     <p class="job-easter-egg">20+ years in technology. Still haven't found a good reason for TPS reports.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Jul 2013 — Oct 2015</time>
+      <span class="job-name">Visionary Communications</span>
+      <span class="jobtitle">Technical Support / Field Installation</span>
+      <span class="summary">Some days at a desk. Other days, the view was a whole lot higher.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">My later time at Visionary took me further into field installations and wireless infrastructure. Some jobs were at customers' homes; others meant tower work or getting equipment running at remote sites.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Installed and serviced fixed-wireless broadband equipment for residential and commercial customers.</li><li>Worked on tower installations, including projects on structures approximately 250–300 feet high.</li><li>Installed and troubleshot radio links and wireless relay locations, including some solar-powered remote sites.</li><li>Helped provide broadband connectivity for schools in Wyoming and worked through difficult site conditions.</li><li>Tested signal strength, aligned or adjusted equipment, diagnosed interference and connectivity problems, and documented field work.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Fixed wireless • radio links • tower installation • solar relay sites • network cabling • field diagnostics</p>
+     <p class="job-reflection">Some of the more memorable troubleshooting calls happened a long way from a desk.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Sep 2011 — Jun 2013</time>
+      <span class="job-name">Collins Communications</span>
+      <span class="jobtitle">Wireless Broadband Installer</span>
+      <span class="summary">Getting internet to someone’s house isn't always as simple as plugging it in.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">At Collins, the work centered on bringing wireless broadband into customers' homes and getting the connection right from the start. That meant more than mounting equipment: it meant making sure the customer could actually use the service.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Installed and configured fixed-wireless broadband equipment at customer premises.</li><li>Worked through signal, radio-link, cabling, and equipment problems during installations and service calls.</li><li>Verified that customer equipment was operating and explained how the service and setup worked.</li><li>Balanced hands-on installation work with direct customer interaction and follow-up.</li><li>Received Employee of the Month recognition twice during this position.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Fixed wireless broadband • customer-premises equipment • radio signal troubleshooting • cabling</p>
+     <p class="job-reflection">A technically successful installation isn't much use if the customer doesn't understand what's happening.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Sep 2010 — Sep 2011</time>
+      <span class="job-name">Visionary Communications</span>
+      <span class="jobtitle">Broadband Technical Support</span>
+      <span class="summary">Before climbing towers, I was already untangling what made the internet stop working.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">My earlier role at Visionary was more focused on technical support and network troubleshooting. It gave me another side of the broadband business before moving further into field work.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Provided customer technical support for DSL and fixed-wireless broadband connections.</li><li>Troubleshot authentication, configuration, connectivity, and customer equipment issues.</li><li>Worked with broadband configuration and provisioning processes, including PPPoE and RADIUS.</li><li>Tested equipment, updated firmware, and handled returns or warranty processes when equipment needed replacement.</li><li>Received Employee of the Quarter recognition for Q4 2010.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">DSL • fixed wireless • PPPoE • RADIUS • firmware updates • customer support</p>
+     <p class="job-reflection">It was good preparation for later field work: you learn a lot by hearing what customers experience when a connection fails.</p>
+    </div>
+   </details></article>
+  </div>
+  <div class="more-work"><details class="earlier-jobs"><summary>And before all that?</summary><div class="more-content"><div class="history">
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Jul 2009 — Aug 2010</time>
+      <span class="job-name">GoDaddy</span>
+      <span class="jobtitle">Advanced Hosting &amp; Technical Support</span>
+      <span class="summary">DNS: three letters that can lead to a very long afternoon.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">At GoDaddy, the problems were often invisible. A website could be down, email could stop arriving, or a domain setting could be slightly wrong—and the customer just needed someone to figure it out.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Provided advanced technical support for web hosting, domain management, DNS, transfers, and Hosted Exchange.</li><li>Investigated customer hosting issues and escalated cases that required deeper system-level troubleshooting.</li><li>Worked with system administrators and other support teams to resolve server-side or account problems.</li><li>Explained DNS and hosting issues to customers in terms they could follow.</li><li>Helped incoming support staff learn troubleshooting approaches and support procedures.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Web hosting • DNS • domain transfers • Hosted Exchange • escalation troubleshooting</p>
+     <p class="job-reflection">DNS is very good at teaching you that one tiny setting can cause a surprisingly large headache.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Jan 2007 — Apr 2009</time>
+      <span class="job-name">Ameritraining / AT&amp;T U-verse</span>
+      <span class="jobtitle">Tier II Technical Support</span>
+      <span class="summary">When the field technician calls support, the easy questions are already over.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">This was Tier II support for connected home services. In addition to working with customer issues, I helped field technicians while they were on real installations and repairs.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Troubleshot AT&amp;T U-verse internet, digital television, and VoIP service problems.</li><li>Provided advanced technical support for connectivity and customer equipment issues.</li><li>Assisted field technicians in real time as they worked on installations or repairs at customer locations.</li><li>Worked through diagnostic steps and helped identify practical next actions when the easy fixes had already been tried.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Broadband • IPTV • VoIP • customer-premises equipment • real-time field support</p>
+     <p class="job-reflection">Helping another technician solve a problem over the phone can be its own kind of puzzle.</p>
+    </div>
+   </details></article>
+   <article class="stop"><details class="job-details">
+    <summary>
+     <span class="job-preview">
+      <time>Aug 2005 — May 2006</time>
+      <span class="job-name">The Salvation Army — Southwest Division</span>
+      <span class="jobtitle">IT Field Technician</span>
+      <span class="summary">Twenty remote locations. Plenty of computers. Not much sitting still.</span>
+      <span class="job-prompt" aria-hidden="true">A little more <span class="job-plus">+</span></span>
+     </span>
+    </summary>
+    <div class="job-expanded">
+     <p class="job-intro">This was a field IT role supporting multiple facilities instead of just one office. Every site needed working computers, reliable network access, and help when something broke.</p>
+     <h4 class="job-section-head">The work</h4>
+     <ul><li>Provided technical and end-user support across approximately 20 remote facilities.</li><li>Maintained and repaired an equipment inventory of more than 500 workstations, servers, laptops, printers, and mobile devices.</li><li>Worked with network hardware, system maintenance, and onsite troubleshooting at different locations.</li><li>Supported inter-site connectivity and security involving IPsec VPN tunnels.</li><li>Helped keep employees and facilities connected so they could continue their work.</li></ul>
+     <h4 class="job-section-head">Tools and technology</h4>
+     <p class="job-tech">Windows workstations • servers • printers • networking • IPsec VPN • field support</p>
+     <p class="job-reflection">Working across multiple sites taught me to arrive prepared, pay attention, and solve the problem in front of me.</p>
+    </div>
+   </details></article>
+  </div></div></details></div>
+ </div>
+</section>
+
+<section class="section tinkering" id="projects">
+ <div class="site-width">
+  <p class="section-label">04 / After hours</p>
+  <h2 class="section-title">I have a habit of <em>tinkering.</em></h2>
+  <p class="tinkering-intro">Turns out that when I have an idea for something useful, I have a hard time leaving it as just an idea. A few of my ongoing projects:</p>
+  <div class="project-rows">
+   <article class="project-row"><span class="project-num">01</span><h3>Addicted to Karaoke</h3><p>Helping singers find karaoke nights and bringing hosts, venues, and the community together.</p></article>
+   <article class="project-row"><span class="project-num">02</span><h3>Cents Happens</h3><p>A personal finance app for keeping bills, budgets, and financial plans organized.</p></article>
+   <article class="project-row"><span class="project-num">03</span><h3>Garage Buddy</h3><p>A vehicle companion for maintenance details, paperwork, and ownership expenses.</p></article>
+   <article class="project-row"><span class="project-num">04</span><h3>Android experiments</h3><p>Call management, launcher concepts, and small tools to make everyday technology behave more usefully.</p></article>
+  </div>
+  <p class="project-caption">I shape the ideas, product requirements, workflows, and testing, using AI-assisted development collaboratively to bring the projects to life.</p>
+ </div>
+</section>
+
+<section class="section values" id="values">
+ <div class="site-width values-in">
+  <div>
+    <p class="section-label">05 / A few principles</p>
+    <h2 class="section-title">Some things <em>stick with you.</em></h2>
+  </div>
+  <div>
+    <p class="principle">“Integrity First. Service Before Self. Excellence in All We Do.”</p>
+    <p class="details">Those Air Force core values have stayed with me. They still make a pretty good compass, whether I'm troubleshooting a computer, working with a team, or learning something new.</p>
+    <p class="values-aside"><span class="values-quote">“Doing the right thing is never the wrong thing.”</span><span class="values-credit"> — <cite>Ted Lasso</cite></span></p>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="site-width footer-content"><strong>Steven Gerbitz</strong><span>Made it this far? We might have a few things to talk about.</span></div></footer>
+<script>
+(()=>{
+ const button=document.querySelector(".menu-btn");
+ const nav=document.querySelector("#navigation");
+ if(!button||!nav)return;
+ const close=()=>{button.setAttribute("aria-expanded","false");nav.classList.remove("open");};
+ button.addEventListener("click",()=>{const open=button.getAttribute("aria-expanded")!=="true";button.setAttribute("aria-expanded",String(open));nav.classList.toggle("open",open);});
+ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",close));
+ document.addEventListener("keydown",event=>{if(event.key==="Escape")close();});
+ document.addEventListener("click",event=>{if(!button.contains(event.target)&&!nav.contains(event.target))close();});
+})();
+</script>
+</body>
+</html>

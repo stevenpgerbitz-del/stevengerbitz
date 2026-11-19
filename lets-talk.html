@@ -66,7 +66,7 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
 .resume-form input::placeholder,.resume-form textarea::placeholder{color:#8a807b}
 .resume-form .optional{font-size:11px;font-weight:400;color:#786b67}
 .form-footer{display:grid;gap:10px}
-.form-footer button{padding:13px 22px;border:1px solid #997a73;background:#998b81;color:#fff9f0;font:800 13px "Segoe UI",Arial,sans-serif;cursor:not-allowed;opacity:.88;min-height:48px}
+.form-footer button{padding:13px 22px;border:1px solid #997a73;background:#7d4149;color:#fff9f0;font:800 13px "Segoe UI",Arial,sans-serif;cursor:pointer;min-height:48px}
 .form-footer small{font-size:11px;line-height:1.6;color:#7b6260}
 .compact-contacts{margin-top:44px}
 @media(max-width:850px){.request-layout{grid-template-columns:1fr;gap:16px}.request-intro{padding:0}.request-detail{margin-top:20px}.resume-form{max-width:660px}}
@@ -85,17 +85,20 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
   <p>Tell me a little about the opportunity, and I’ll follow up personally.</p>
   <div class="request-detail"><strong>Not quite ready to reach out?</strong><span>You're welcome to explore the full career timeline first.</span><a href="/#journey">View my experience ↗</a></div>
  </div>
- <form class="resume-form" aria-label="Full résumé request preview" novalidate>
-  <div class="form-note"><strong>Interested? Let's make an introduction.</strong><span>This is a design preview. The request form doesn't send or store anything yet.</span></div>
+ <form class="resume-form" aria-label="Full résumé request" action="https://api.web3forms.com/submit" method="post">
+  <input type="hidden" name="access_key" value="040a9da3-8940-4288-a015-bd72d3aa8f91">
+  <input type="hidden" name="subject" value="New résumé request from steven.gerbitz.org">
+  <input type="checkbox" name="botcheck" hidden>
+  <div class="form-note"><strong>Interested? Let's make an introduction.</strong></div>
   <div class="form-grid">
-   <label>Your name <input name="requester-name" autocomplete="name" placeholder="Your full name" type="text"></label>
-   <label>Company or organization <input name="company" autocomplete="organization" placeholder="Where you work" type="text"></label>
+   <label>Your name <input name="name" required maxlength="120" autocomplete="name" placeholder="Your full name" type="text"></label>
+   <label>Company or organization <input name="company" maxlength="160" autocomplete="organization" placeholder="Where you work" type="text"></label>
   </div>
-  <label>Work email <input name="requester-email" autocomplete="email" placeholder="you@company.com" type="email"></label>
-  <label>Anything you'd like me to know? <span class="optional">(optional)</span><textarea name="message" rows="3" placeholder="A role, a question, or a quick introduction"></textarea></label>
-  <div class="form-footer"><button type="button" disabled aria-disabled="true">Request full résumé ↗</button><small>Preview only — submissions will be enabled when a secure notification method is connected.</small></div>
+  <label>Work email <input name="email" required maxlength="254" autocomplete="email" placeholder="you@company.com" type="email"></label>
+  <label>Anything you'd like me to know? <span class="optional">(optional)</span><textarea name="message" maxlength="3000" rows="3" placeholder="A role, a question, or a quick introduction"></textarea></label>
+  <div class="form-footer"><button type="submit">Request full résumé ↗</button><small>Web3Forms processes your request and sends it to Steve.</small></div>
  </form>
 </div>
-<div class="cards compact-contacts"><div class="card"><h3>Email Steve</h3><p>I'll add a professional contact address here once I've decided which one to make public.</p></div><div class="card"><h3>Curious about my work?</h3><p>There's a lot more detail in my career stories, including the projects and the people along the way.</p><a href="/#pillars" class="text-link">Explore the short version ↗</a></div></div>
+<div class="cards compact-contacts"><div class="card"><h3>Curious about my work?</h3><p>There's a lot more detail in my career stories, including the projects and the people along the way.</p><a href="/#pillars" class="text-link">Explore the short version ↗</a></div></div>
 </div></section>
 <section class="story dark"><div class="wrap"><p class="label">03 / Classifieds department</p><h2>One experienced problem solver.<br><em>Good working condition.</em></h2><p>Curious, reliable, field-tested, and capable of finding the right cable. Occasional sarcasm. Excellent communication skills. No lowball offers; I know what I've got.</p><div class="note">Seeking a long-term professional connection. Swipe right on a good opportunity.</div></div></section></main><footer><div class="wrap bottom"><strong>Steven Gerbitz</strong><span>Made it this far? We might have a few things to talk about.</span></div></footer></body></html>

@@ -674,6 +674,15 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
  .v28-preview .v28-mission-column h3{font-size:2.35rem}
  .v28-preview .v28-values-bottom{grid-template-columns:1fr;gap:16px;margin-top:33px}
 }
+
+/* V28 portrait: winning teal-shirt portrait, no redesign of approved content */
+.v28-preview .v28-about-right{display:grid;gap:23px;align-content:start}
+.v28-preview .v28-about-portrait{margin:0;max-width:315px;position:relative}
+.v28-preview .v28-about-portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 27%;border-radius:4px 25px 4px 4px;border:1px solid #ceb8a9;box-shadow:11px 12px 0 #8a50531c}
+.v28-preview .v28-about-portrait figcaption{font:italic 15px/1.5 Georgia,serif;color:#785b59;margin:16px 0 0}
+.v28-preview .v28-about-right .margin-note{margin-top:0}
+@media(max-width:720px){.v28-preview .v28-about-right{grid-template-columns:minmax(0,250px) minmax(0,1fr);align-items:center;gap:23px}.v28-preview .v28-about-portrait figcaption{font-size:13px}}
+@media(max-width:540px){.v28-preview .v28-about-right{grid-template-columns:1fr;max-width:470px;gap:20px}.v28-preview .v28-about-portrait{max-width:300px}}
 </style>
 </head>
 <body class="v28-preview">
@@ -748,10 +757,16 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
    <p>I've been the person answering the phone, the one standing in front of the equipment, and the one showing a newer technician how to get a job done right.</p>
    <p>What I enjoy most hasn't really changed: finding out what went wrong, helping someone, and making sure the fix actually holds.</p>
   </div>
+  <div class="v28-about-right">
+  <figure class="v28-about-portrait">
+   <img src="./assets/steven-teal-portrait-v28.webp" width="800" height="1000" alt="Portrait of Steven smiling in a teal patterned shirt" loading="lazy" decoding="async">
+   <figcaption>The person behind the troubleshooting.</figcaption>
+  </figure>
   <aside class="margin-note">
    <p class="hand">I'm serious about the work. Not so serious that I can't laugh at myself.</p>
    <small>One thing I've learned: patience and a sense of humor go a long way in technical support.</small>
   </aside>
+ </div>
  </div>
  <div class="site-width">
   <div class="v28-skills" aria-label="Core strengths">

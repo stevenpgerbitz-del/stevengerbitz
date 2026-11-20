@@ -119,9 +119,9 @@ footer #footer-saying a:focus-visible{outline:2px solid #edc5c0;outline-offset:3
  const chosen=remaining.shift(),entry=entries[chosen];
  if(entry.contact){
    const link=document.createElement('a');
-   link.href='./lets-talk.html';
+   link.href='./lets-talk.html#getting-in-touch';
    link.textContent=entry.t;
-   link.title='Go to the Let’s Talk page';
+   link.title='Jump to the Getting in touch form';
    footer.replaceChildren(link);
  } else {
    footer.textContent=entry.t;

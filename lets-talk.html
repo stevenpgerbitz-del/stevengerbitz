@@ -72,6 +72,11 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
 @media(max-width:850px){.request-layout{grid-template-columns:1fr;gap:16px}.request-intro{padding:0}.request-detail{margin-top:20px}.resume-form{max-width:660px}}
 @media(max-width:520px){.resume-form{padding:21px 18px}.form-grid{grid-template-columns:1fr;gap:17px}.request-intro h3{font-size:2.1rem}.request-layout{margin-top:25px}.compact-contacts{margin-top:30px}}
 .steve-portrait{margin:0;max-width:480px;position:relative}.steve-portrait img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:4px 28px 4px 4px;box-shadow:13px 15px 0 #a55a5d22;border:1px solid #d2b4a5}.steve-portrait figcaption{margin:18px 0 0;color:#69565a;font:italic 15px/1.5 Georgia,serif}.steve-portrait:after{content:"";position:absolute;inset:0 auto auto -12px;width:3px;height:115px;background:#8b4b53}@media(max-width:720px){.steve-portrait{max-width:410px}.steve-portrait img{max-height:560px;object-fit:cover;object-position:center 35%}}
+/* Discreet footer links for playful contact lines */
+footer #footer-saying a{color:#f0cbc7;text-decoration:underline;text-decoration-color:#a07379;text-underline-offset:3px}
+footer #footer-saying a:hover{color:#fff7ed;text-decoration-color:currentColor}
+footer #footer-saying a:focus-visible{outline:2px solid #edc5c0;outline-offset:3px}
+
 </style></head><body><header class="top"><div class="wrap topin"><a href="/" class="brand">STEVEN GERBITZ<span>My little corner of the internet</span></a><nav class="links"><a href="/">Home</a><a href="/#pillars">The Short Version</a><a href="/#journey">Experience</a><a href="/#values">My Values</a><a href="./off-the-clock-v28.html">Off the Clock</a><a href="./lets-talk.html">Let's Talk</a></nav></div></header>
 <main><section class="cover"><div class="wrap"><p class="label">Let's Talk / The part where our paths cross</p><h1>Interested in making<br>a <em>connection?</em></h1><p class="lead">I have over 20 years of experience helping technology—and people—work better together. If that sounds like somebody you could use on your team, I'd welcome the conversation.</p><a class="cta" href="/#journey">Read the work history ↗</a></div></section>
 <section class="story"><div class="wrap two"><div><p class="label">01 / A short professional introduction</p><h2>Hi, I'm <em>Steve.</em></h2><p>I'm an experienced technical support and telecommunications professional with a background in fiber installations, field troubleshooting, user support, and helping people work through difficult problems.</p><p>I'm interested in work where experience, patience, curiosity, and clear communication still mean something.</p></div><figure class="steve-portrait"><img src="./assets/steven-teal-portrait-v28.webp" alt="Portrait of Steven smiling in a teal patterned shirt" width="800" height="1000" loading="eager" decoding="async"><figcaption>The face behind the work. No generic stock portrait.</figcaption></figure></div></section>
@@ -102,30 +107,39 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
 <div class="cards compact-contacts"><div class="card"><h3>Curious about my work?</h3><p>There's a lot more detail in my career stories, including the projects and the people along the way.</p><a href="/#pillars" class="text-link">Explore the short version ↗</a></div></div>
 </div></section>
 <section class="story dark"><div class="wrap"><p class="label">03 / Classifieds department</p><h2>One experienced problem solver.<br><em>Good working condition.</em></h2><p>Curious, reliable, field-tested, and capable of finding the right cable. Occasional sarcasm. Excellent communication skills. No lowball offers; I know what I've got.</p><div class="note">Seeking a long-term professional connection. Swipe right on a good opportunity.</div></div></section></main><footer><div class="wrap bottom"><strong>Steven Gerbitz</strong><span id="footer-saying">Made it this far? We might have a few things to talk about.</span></div></footer><script>
-/* Rotate original footer sayings on each visit or refresh, without immediate repeats. */
+/* 24 site sayings: a shuffled cycle shared across pages during each browsing session. */
 (function () {
- const footer = document.getElementById('footer-saying');
- if (!footer) return;
- const sayings = [
- "Made it this far? We might have a few things to talk about.",
- "Curious by nature. Problem solver by trade.",
- "Not every connection needs a cable.",
- "Powered by curiosity and the occasional Diet Dr Pepper.",
- "Thanks for stopping by. The microphone is optional.",
- "Some assembly required. Good conversation encouraged.",
- "There's probably a better way. I like finding it.",
- "Still curious. Still learning. Still asking questions.",
- "Not every good story fits on a résumé.",
- "Somewhere, an old karaoke songbook is feeling nostalgic.",
- "Good people. Good questions. Better solutions.",
- "A good conversation can solve more than you think."
-];
- let previous = '';
- try { previous = sessionStorage.getItem('steven-footer-last') || ''; } catch (e) {}
- const options = sayings.filter(saying => saying !== previous);
- const saying = options[Math.floor(Math.random() * options.length)];
- footer.textContent = saying;
- try { sessionStorage.setItem('steven-footer-last', saying); } catch (e) {}
+ const footer=document.getElementById('footer-saying');
+ if(!footer)return;
+ const entries=[{"t":"Made it this far? We might have a few things to talk about."},{"t":"Curious by nature. Problem solver by trade."},{"t":"Not every connection needs a cable."},{"t":"Powered by curiosity and the occasional Diet Dr Pepper."},{"t":"Thanks for stopping by. The microphone is optional."},{"t":"Some assembly required. Good conversation encouraged."},{"t":"There's probably a better way. I like finding it."},{"t":"Still curious. Still learning. Still asking questions."},{"t":"Not every good story fits on a résumé."},{"t":"Somewhere, an old karaoke songbook is feeling nostalgic."},{"t":"Good people. Good questions. Better solutions."},{"t":"A good conversation can solve more than you think."},{"t":"There are plenty of fish in the sea, but this one's great at troubleshooting.","contact":true},{"t":"Is your hiring process missing a connection? I might be the missing link.","contact":true},{"t":"You had me at 'We're hiring.'","contact":true},{"t":"Are you a job opportunity? Because I think we might have chemistry.","contact":true},{"t":"Tired of searching for the right person? Well, look who just scrolled to the bottom.","contact":true},{"t":"I could play hard to get, but there's literally a contact page.","contact":true},{"t":"“Be curious, not judgmental.” — Ted Lasso"},{"t":"“Doing the right thing is never the wrong thing.” — Ted Lasso"},{"t":"“Clear eyes, full hearts, can’t lose.” — Friday Night Lights"},{"t":"I work with technology, but I work for people."},{"t":"Hi, it's me. I'm the problem... solver."},{"t":"Known issue: may occasionally burst into song."}];
+ const storageKey='steven-footer-24-v1';
+ let remaining=[],last=-1;
+ try {
+   const state=JSON.parse(sessionStorage.getItem(storageKey)||'null');
+   if(state && Array.isArray(state.remaining)) {
+     remaining=state.remaining.filter(i=>Number.isInteger(i)&&i>=0&&i<entries.length);
+     if(Number.isInteger(state.last))last=state.last;
+   }
+ } catch(e){}
+ if(!remaining.length){
+   remaining=Array.from({length:entries.length},(_,i)=>i);
+   for(let i=remaining.length-1;i>0;i--){
+     const j=Math.floor(Math.random()*(i+1));
+     [remaining[i],remaining[j]]=[remaining[j],remaining[i]];
+   }
+   if(remaining[0]===last) [remaining[0],remaining[1]]=[remaining[1],remaining[0]];
+ }
+ const chosen=remaining.shift(),entry=entries[chosen];
+ if(entry.contact){
+   const link=document.createElement('a');
+   link.href='./lets-talk.html';
+   link.textContent=entry.t;
+   link.title='Go to the Let’s Talk page';
+   footer.replaceChildren(link);
+ } else {
+   footer.textContent=entry.t;
+ }
+ try {sessionStorage.setItem(storageKey,JSON.stringify({remaining,last:chosen}));}catch(e){}
 })();
 </script>
 </body></html>

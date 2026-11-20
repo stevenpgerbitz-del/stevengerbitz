@@ -695,6 +695,11 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
 .v28-preview .hero-bridge{margin:16px 0 3px;font-size:13px;font-weight:700;color:#f2e6dc}
 .v28-preview .hero-people-line{margin:3px 0 12px;color:#dfa8a7;font:italic 400 clamp(1.25rem,1.85vw,1.55rem)/1.4 Georgia,serif}
 .v28-preview .hero-closing{margin:12px 0 0;color:#e7d6ce;font:italic 400 14px/1.7 Georgia,serif;max-width:670px}
+/* Discreet footer links for playful contact lines */
+footer #footer-saying a{color:#f0cbc7;text-decoration:underline;text-decoration-color:#a07379;text-underline-offset:3px}
+footer #footer-saying a:hover{color:#fff7ed;text-decoration-color:currentColor}
+footer #footer-saying a:focus-visible{outline:2px solid #edc5c0;outline-offset:3px}
+
 </style>
 </head>
 <body class="v28-preview">
@@ -1092,30 +1097,39 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
 })();
 </script>
 <script>
-/* Rotate original footer sayings on each visit or refresh, without immediate repeats. */
+/* 24 site sayings: a shuffled cycle shared across pages during each browsing session. */
 (function () {
- const footer = document.getElementById('footer-saying');
- if (!footer) return;
- const sayings = [
- "Made it this far? We might have a few things to talk about.",
- "Curious by nature. Problem solver by trade.",
- "Not every connection needs a cable.",
- "Powered by curiosity and the occasional Diet Dr Pepper.",
- "Thanks for stopping by. The microphone is optional.",
- "Some assembly required. Good conversation encouraged.",
- "There's probably a better way. I like finding it.",
- "Still curious. Still learning. Still asking questions.",
- "Not every good story fits on a résumé.",
- "Somewhere, an old karaoke songbook is feeling nostalgic.",
- "Good people. Good questions. Better solutions.",
- "A good conversation can solve more than you think."
-];
- let previous = '';
- try { previous = sessionStorage.getItem('steven-footer-last') || ''; } catch (e) {}
- const options = sayings.filter(saying => saying !== previous);
- const saying = options[Math.floor(Math.random() * options.length)];
- footer.textContent = saying;
- try { sessionStorage.setItem('steven-footer-last', saying); } catch (e) {}
+ const footer=document.getElementById('footer-saying');
+ if(!footer)return;
+ const entries=[{"t":"Made it this far? We might have a few things to talk about."},{"t":"Curious by nature. Problem solver by trade."},{"t":"Not every connection needs a cable."},{"t":"Powered by curiosity and the occasional Diet Dr Pepper."},{"t":"Thanks for stopping by. The microphone is optional."},{"t":"Some assembly required. Good conversation encouraged."},{"t":"There's probably a better way. I like finding it."},{"t":"Still curious. Still learning. Still asking questions."},{"t":"Not every good story fits on a résumé."},{"t":"Somewhere, an old karaoke songbook is feeling nostalgic."},{"t":"Good people. Good questions. Better solutions."},{"t":"A good conversation can solve more than you think."},{"t":"There are plenty of fish in the sea, but this one's great at troubleshooting.","contact":true},{"t":"Is your hiring process missing a connection? I might be the missing link.","contact":true},{"t":"You had me at 'We're hiring.'","contact":true},{"t":"Are you a job opportunity? Because I think we might have chemistry.","contact":true},{"t":"Tired of searching for the right person? Well, look who just scrolled to the bottom.","contact":true},{"t":"I could play hard to get, but there's literally a contact page.","contact":true},{"t":"“Be curious, not judgmental.” — Ted Lasso"},{"t":"“Doing the right thing is never the wrong thing.” — Ted Lasso"},{"t":"“Clear eyes, full hearts, can’t lose.” — Friday Night Lights"},{"t":"I work with technology, but I work for people."},{"t":"Hi, it's me. I'm the problem... solver."},{"t":"Known issue: may occasionally burst into song."}];
+ const storageKey='steven-footer-24-v1';
+ let remaining=[],last=-1;
+ try {
+   const state=JSON.parse(sessionStorage.getItem(storageKey)||'null');
+   if(state && Array.isArray(state.remaining)) {
+     remaining=state.remaining.filter(i=>Number.isInteger(i)&&i>=0&&i<entries.length);
+     if(Number.isInteger(state.last))last=state.last;
+   }
+ } catch(e){}
+ if(!remaining.length){
+   remaining=Array.from({length:entries.length},(_,i)=>i);
+   for(let i=remaining.length-1;i>0;i--){
+     const j=Math.floor(Math.random()*(i+1));
+     [remaining[i],remaining[j]]=[remaining[j],remaining[i]];
+   }
+   if(remaining[0]===last) [remaining[0],remaining[1]]=[remaining[1],remaining[0]];
+ }
+ const chosen=remaining.shift(),entry=entries[chosen];
+ if(entry.contact){
+   const link=document.createElement('a');
+   link.href='./lets-talk.html';
+   link.textContent=entry.t;
+   link.title='Go to the Let’s Talk page';
+   footer.replaceChildren(link);
+ } else {
+   footer.textContent=entry.t;
+ }
+ try {sessionStorage.setItem(storageKey,JSON.stringify({remaining,last:chosen}));}catch(e){}
 })();
 </script>
 </body>

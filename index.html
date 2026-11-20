@@ -700,6 +700,15 @@ footer #footer-saying a{color:#f0cbc7;text-decoration:underline;text-decoration-
 footer #footer-saying a:hover{color:#fff7ed;text-decoration-color:currentColor}
 footer #footer-saying a:focus-visible{outline:2px solid #edc5c0;outline-offset:3px}
 
+
+/* A personal example within the existing About section */
+.v28-about-example{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.55fr);gap:6%;margin-top:42px;padding:28px 0 8px;border-top:1px solid #cdbdb0}
+.v28-about-example-title small{display:block;margin-bottom:12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#82515a;font-weight:700}
+.v28-about-example-title h3{font:italic 400 clamp(25px,3vw,36px)/1.25 Georgia,serif;color:#653b41;margin:0}
+.v28-about-example-copy p{font-size:15px;line-height:1.8;color:#534d4d;margin:0 0 14px}
+.v28-about-example-copy strong{font-weight:700;color:#653b41}
+@media(max-width:720px){.v28-about-example{grid-template-columns:1fr;gap:18px;margin-top:28px;padding-top:23px}}
+
 </style>
 </head>
 <body class="v28-preview">
@@ -775,7 +784,7 @@ footer #footer-saying a:focus-visible{outline:2px solid #edc5c0;outline-offset:3
    <h2 class="section-title">A little curiosity goes a <em>long way.</em></h2>
    <p>I've spent more than 20 years working with technology in all sorts of places: classrooms, mines, homes, businesses, and some pretty remote communications sites.</p>
    <p>I've been the person answering the phone, the one standing in front of the equipment, and the one showing a newer technician how to get a job done right.</p>
-   <p>What I enjoy most hasn't really changed: finding out what went wrong, helping someone, and making sure the fix actually holds.</p>
+   <p>When someone asks for help, I start by listening. I want to know what they're trying to accomplish, not just what seems to be going wrong. And I try to remember that the problem may already be frustrating for them.</p>
   </div>
   <div class="v28-about-right">
   <figure class="v28-about-portrait">
@@ -787,6 +796,20 @@ footer #footer-saying a:focus-visible{outline:2px solid #edc5c0;outline-offset:3
    <small>One thing I've learned: patience and a sense of humor go a long way in technical support.</small>
   </aside>
  </div>
+ </div>
+ <div class="site-width">
+  <div class="v28-about-example">
+   <div class="v28-about-example-title">
+    <small>A real troubleshooting story</small>
+    <h3>Sometimes, nothing is broken.</h3>
+   </div>
+   <div class="v28-about-example-copy">
+    <p>Someone wanted to use three monitors with their laptop. Sounds simple enough, right? Well, not quite. The laptop couldn't support the display setup they needed.</p>
+    <p>We tried USB-C to HDMI and USB-C to DisplayPort adapters. We tried several docking stations, including ones with multiple DisplayPort and HDMI outputs. None of those combinations worked.</p>
+    <p>Eventually, we found the answer: a USB graphics adapter using DisplayLink technology, which allowed us to connect another display. It took some trial and error, but we found a way to make the setup work.</p>
+    <p>That's what I enjoy about troubleshooting. Sometimes the answer is a repair. Sometimes the equipment is working exactly as designed, and you have to find another approach. <strong>My goal is to help the person accomplish what they came to me to do.</strong></p>
+   </div>
+  </div>
  </div>
  <div class="site-width">
   <div class="v28-skills" aria-label="Core strengths">

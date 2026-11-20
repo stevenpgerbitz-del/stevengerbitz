@@ -63,6 +63,11 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
 @media(max-width:760px){.lens-item,.lens-item.featured{grid-column:span 6}.lens-open,.featured .lens-open{aspect-ratio:1.25}.lens-item figcaption{font-size:14px}}
 @media(max-width:400px){.lens-grid{gap:12px 9px}}
 
+/* Discreet footer links for playful contact lines */
+footer #footer-saying a{color:#f0cbc7;text-decoration:underline;text-decoration-color:#a07379;text-underline-offset:3px}
+footer #footer-saying a:hover{color:#fff7ed;text-decoration-color:currentColor}
+footer #footer-saying a:focus-visible{outline:2px solid #edc5c0;outline-offset:3px}
+
 </style></head><body><header class="top"><div class="wrap topin"><a href="/" class="brand">STEVEN GERBITZ<span>My little corner of the internet</span></a><nav class="links"><a href="/">Home</a><a href="/#pillars">The Short Version</a><a href="/#journey">Experience</a><a href="/#values">My Values</a><a href="./off-the-clock-v28.html">Off the Clock</a><a href="./lets-talk.html">Let's Talk</a></nav></div></header>
 <main><section class="cover"><div class="wrap"><p class="label">Off the Clock / The person behind the work</p><h1>More than cables,<br>computers, <em>and error codes.</em></h1><p class="lead">The work is a big part of my story. It isn't the whole thing. There's family, music, some questionable humor, and usually another idea I can't quite leave alone.</p><a class="cta" href="/">← Back to the homepage</a></div></section>
 <section class="story"><div class="wrap two"><div><p class="label">01 / The people who matter</p><h2>Family is <em>the good stuff.</em></h2><p>I'm a proud dad and bonus dad to four young adults. Family means a great deal to me, and it reminds me that the best connections don't run through a cable.</p><p>I'm keeping this page personal without turning my family's private lives into public information.</p><div class="note">Four young adults. A full heart. Probably not enough hours in the day.</div></div><div><img class="image" src="./assets/steven-offclock-v28.webp" alt="Warm microphone and notebook still life; illustrative artwork, not a family photograph"></div></div></section>
@@ -89,30 +94,39 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
 </div></section>
 
 <section class="story dark"><div class="wrap"><p class="label">04 / You made it to the personal section</p><h2>Some assembly <em>still required.</em></h2><p>There's still more to this story, but the important parts are here: family, community, curiosity, and not taking myself too seriously.</p><p class="note">Known issue: may occasionally burst into song.</p><p class="small-fact">For the record: it’s Diet Dr Pepper, not coffee. Favorite energy drink? GHOST Root Beer.</p><a class="cta" href="./lets-talk.html">So, shall we talk? ↗</a></div></section></main><footer><div class="wrap bottom"><strong>Steven Gerbitz</strong><span id="footer-saying">Made it this far? We might have a few things to talk about.</span></div></footer><script>
-/* Rotate original footer sayings on each visit or refresh, without immediate repeats. */
+/* 24 site sayings: a shuffled cycle shared across pages during each browsing session. */
 (function () {
- const footer = document.getElementById('footer-saying');
- if (!footer) return;
- const sayings = [
- "Made it this far? We might have a few things to talk about.",
- "Curious by nature. Problem solver by trade.",
- "Not every connection needs a cable.",
- "Powered by curiosity and the occasional Diet Dr Pepper.",
- "Thanks for stopping by. The microphone is optional.",
- "Some assembly required. Good conversation encouraged.",
- "There's probably a better way. I like finding it.",
- "Still curious. Still learning. Still asking questions.",
- "Not every good story fits on a résumé.",
- "Somewhere, an old karaoke songbook is feeling nostalgic.",
- "Good people. Good questions. Better solutions.",
- "A good conversation can solve more than you think."
-];
- let previous = '';
- try { previous = sessionStorage.getItem('steven-footer-last') || ''; } catch (e) {}
- const options = sayings.filter(saying => saying !== previous);
- const saying = options[Math.floor(Math.random() * options.length)];
- footer.textContent = saying;
- try { sessionStorage.setItem('steven-footer-last', saying); } catch (e) {}
+ const footer=document.getElementById('footer-saying');
+ if(!footer)return;
+ const entries=[{"t":"Made it this far? We might have a few things to talk about."},{"t":"Curious by nature. Problem solver by trade."},{"t":"Not every connection needs a cable."},{"t":"Powered by curiosity and the occasional Diet Dr Pepper."},{"t":"Thanks for stopping by. The microphone is optional."},{"t":"Some assembly required. Good conversation encouraged."},{"t":"There's probably a better way. I like finding it."},{"t":"Still curious. Still learning. Still asking questions."},{"t":"Not every good story fits on a résumé."},{"t":"Somewhere, an old karaoke songbook is feeling nostalgic."},{"t":"Good people. Good questions. Better solutions."},{"t":"A good conversation can solve more than you think."},{"t":"There are plenty of fish in the sea, but this one's great at troubleshooting.","contact":true},{"t":"Is your hiring process missing a connection? I might be the missing link.","contact":true},{"t":"You had me at 'We're hiring.'","contact":true},{"t":"Are you a job opportunity? Because I think we might have chemistry.","contact":true},{"t":"Tired of searching for the right person? Well, look who just scrolled to the bottom.","contact":true},{"t":"I could play hard to get, but there's literally a contact page.","contact":true},{"t":"“Be curious, not judgmental.” — Ted Lasso"},{"t":"“Doing the right thing is never the wrong thing.” — Ted Lasso"},{"t":"“Clear eyes, full hearts, can’t lose.” — Friday Night Lights"},{"t":"I work with technology, but I work for people."},{"t":"Hi, it's me. I'm the problem... solver."},{"t":"Known issue: may occasionally burst into song."}];
+ const storageKey='steven-footer-24-v1';
+ let remaining=[],last=-1;
+ try {
+   const state=JSON.parse(sessionStorage.getItem(storageKey)||'null');
+   if(state && Array.isArray(state.remaining)) {
+     remaining=state.remaining.filter(i=>Number.isInteger(i)&&i>=0&&i<entries.length);
+     if(Number.isInteger(state.last))last=state.last;
+   }
+ } catch(e){}
+ if(!remaining.length){
+   remaining=Array.from({length:entries.length},(_,i)=>i);
+   for(let i=remaining.length-1;i>0;i--){
+     const j=Math.floor(Math.random()*(i+1));
+     [remaining[i],remaining[j]]=[remaining[j],remaining[i]];
+   }
+   if(remaining[0]===last) [remaining[0],remaining[1]]=[remaining[1],remaining[0]];
+ }
+ const chosen=remaining.shift(),entry=entries[chosen];
+ if(entry.contact){
+   const link=document.createElement('a');
+   link.href='./lets-talk.html';
+   link.textContent=entry.t;
+   link.title='Go to the Let’s Talk page';
+   footer.replaceChildren(link);
+ } else {
+   footer.textContent=entry.t;
+ }
+ try {sessionStorage.setItem(storageKey,JSON.stringify({remaining,last:chosen}));}catch(e){}
 })();
 </script>
 </body></html>

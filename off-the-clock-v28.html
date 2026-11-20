@@ -88,4 +88,31 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
 <p class="lens-signoff">No fancy equipment. Just the camera in my pocket.</p>
 </div></section>
 
-<section class="story dark"><div class="wrap"><p class="label">04 / You made it to the personal section</p><h2>Some assembly <em>still required.</em></h2><p>There's still more to this story, but the important parts are here: family, community, curiosity, and not taking myself too seriously.</p><p class="note">Known issue: may occasionally burst into song.</p><p class="small-fact">For the record: it’s Diet Dr Pepper, not coffee. Favorite energy drink? GHOST Root Beer.</p><a class="cta" href="./lets-talk.html">So, shall we talk? ↗</a></div></section></main><footer><div class="wrap bottom"><strong>Steven Gerbitz</strong><span>Made it this far? We might have a few things to talk about.</span></div></footer></body></html>
+<section class="story dark"><div class="wrap"><p class="label">04 / You made it to the personal section</p><h2>Some assembly <em>still required.</em></h2><p>There's still more to this story, but the important parts are here: family, community, curiosity, and not taking myself too seriously.</p><p class="note">Known issue: may occasionally burst into song.</p><p class="small-fact">For the record: it’s Diet Dr Pepper, not coffee. Favorite energy drink? GHOST Root Beer.</p><a class="cta" href="./lets-talk.html">So, shall we talk? ↗</a></div></section></main><footer><div class="wrap bottom"><strong>Steven Gerbitz</strong><span id="footer-saying">Made it this far? We might have a few things to talk about.</span></div></footer><script>
+/* Rotate original footer sayings on each visit or refresh, without immediate repeats. */
+(function () {
+ const footer = document.getElementById('footer-saying');
+ if (!footer) return;
+ const sayings = [
+ "Made it this far? We might have a few things to talk about.",
+ "Curious by nature. Problem solver by trade.",
+ "Not every connection needs a cable.",
+ "Powered by curiosity and the occasional Diet Dr Pepper.",
+ "Thanks for stopping by. The microphone is optional.",
+ "Some assembly required. Good conversation encouraged.",
+ "There's probably a better way. I like finding it.",
+ "Still curious. Still learning. Still asking questions.",
+ "Not every good story fits on a résumé.",
+ "Somewhere, an old karaoke songbook is feeling nostalgic.",
+ "Good people. Good questions. Better solutions.",
+ "A good conversation can solve more than you think."
+];
+ let previous = '';
+ try { previous = sessionStorage.getItem('steven-footer-last') || ''; } catch (e) {}
+ const options = sayings.filter(saying => saying !== previous);
+ const saying = options[Math.floor(Math.random() * options.length)];
+ footer.textContent = saying;
+ try { sessionStorage.setItem('steven-footer-last', saying); } catch (e) {}
+})();
+</script>
+</body></html>

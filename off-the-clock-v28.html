@@ -54,11 +54,11 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
 .photography .featured-pair>div{border-top:2px solid #99585c;padding:12px 0}
 .photography .featured-pair strong{display:block;font:400 24px/1.4 Georgia,serif;color:#3a3233}
 .photography .featured-pair span{font-size:13px;color:#69605c}
-.photography .photo-gallery iframe{width:100%;height:730px;border:1px solid #d5c4b6;background:#eee3d7;display:block}
+.photography .photo-gallery iframe{width:100%;height:1250px;border:1px solid #d5c4b6;background:#eee3d7;display:block}
 .photography .photo-fallback{font-size:12px;margin:12px 0 0;color:#6b5b5a}
 .photography .photo-fallback a{color:#7d4149;text-decoration:underline;text-underline-offset:3px}
 .photography .photo-signoff{margin:29px 0 0;padding-left:20px;border-left:2px solid #99585c;color:#73464d;font:italic 20px/1.6 Georgia,serif}
-@media(max-width:720px){.photography .featured-pair{grid-template-columns:1fr;gap:5px}.photography .photo-gallery iframe{height:560px}}
+@media(max-width:720px){.photography .featured-pair{grid-template-columns:1fr;gap:5px}.photography .photo-gallery iframe{height:2600px}}
 </style></head><body><header class="top"><div class="wrap topin"><a href="/" class="brand">STEVEN GERBITZ<span>My little corner of the internet</span></a><nav class="links"><a href="/">Home</a><a href="/#pillars">The Short Version</a><a href="/#journey">Experience</a><a href="/#values">My Values</a><a href="./off-the-clock-v28.html">Off the Clock</a><a href="./lets-talk.html">Let's Talk</a></nav></div></header>
 <main><section class="cover"><div class="wrap"><p class="label">Off the Clock / The person behind the work</p><h1>More than cables,<br>computers, <em>and error codes.</em></h1><p class="lead">The work is a big part of my story. It isn't the whole thing. There's family, music, some questionable humor, and usually another idea I can't quite leave alone.</p><a class="cta" href="/">← Back to the homepage</a></div></section>
 <section class="story"><div class="wrap two"><div><p class="label">01 / The people who matter</p><h2>Family is <em>the good stuff.</em></h2><p>I'm a proud dad and bonus dad to four young adults. Family means a great deal to me, and it reminds me that the best connections don't run through a cable.</p><p>I'm keeping this page personal without turning my family's private lives into public information.</p><div class="note">Four young adults. A full heart. Probably not enough hours in the day.</div></div><div><img class="image" src="./assets/steven-offclock-v28.webp" alt="Warm microphone and notebook still life; illustrative artwork, not a family photograph"></div></div></section>
@@ -74,9 +74,35 @@ footer{background:#181a1c;color:#c6b7af;padding:30px 0;font-size:12px}
    <div><strong>Motion</strong><span>Other moments are worth catching while they're moving.</span></div>
  </div>
  <div class="photo-gallery">
-  <iframe title="Through My Lens — photographs by Steven Gerbitz" src="https://www.canva.com/design/DAHbeVYpbKI/view?embed" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  <p class="photo-fallback">If the gallery doesn't load on your device, <a href="https://www.canva.com/design/DAHbeVYpbKI/view" target="_blank" rel="noopener noreferrer">view the photographs in a separate window ↗</a>.</p>
+  <iframe id="photo-gallery-frame" title="Through My Lens — photographs by Steven Gerbitz" src="./through-my-lens-gallery.html" loading="lazy" scrolling="no"></iframe>
+  <p class="photo-fallback">Prefer the full-page gallery? <a href="./through-my-lens-gallery.html" target="_blank" rel="noopener noreferrer">Open the photographs in a separate window ↗</a>.</p>
  </div>
  <p class="photo-signoff">No fancy equipment. Just the camera in my pocket and a reason to stop for a moment.</p>
 </div></section>
-<section class="story dark"><div class="wrap"><p class="label">04 / You made it to the personal section</p><h2>Some assembly <em>still required.</em></h2><p>There's still more to this story, but the important parts are here: family, community, curiosity, and not taking myself too seriously.</p><p class="note">Known issue: may occasionally burst into song.</p><p class="small-fact">For the record: it’s Diet Dr Pepper, not coffee. Favorite energy drink? GHOST Root Beer.</p><a class="cta" href="./lets-talk.html">So, shall we talk? ↗</a></div></section></main><footer><div class="wrap bottom"><strong>Steven Gerbitz</strong><span>Made it this far? We might have a few things to talk about.</span></div></footer></body></html>
+<section class="story dark"><div class="wrap"><p class="label">04 / You made it to the personal section</p><h2>Some assembly <em>still required.</em></h2><p>There's still more to this story, but the important parts are here: family, community, curiosity, and not taking myself too seriously.</p><p class="note">Known issue: may occasionally burst into song.</p><p class="small-fact">For the record: it’s Diet Dr Pepper, not coffee. Favorite energy drink? GHOST Root Beer.</p><a class="cta" href="./lets-talk.html">So, shall we talk? ↗</a></div></section></main><footer><div class="wrap bottom"><strong>Steven Gerbitz</strong><span>Made it this far? We might have a few things to talk about.</span></div></footer><script>
+(function () {
+  const gallery = document.getElementById("photo-gallery-frame");
+  if (!gallery) return;
+  function fitGallery() {
+    try {
+      const doc = gallery.contentDocument;
+      if (!doc) return;
+      const height = Math.ceil(Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight));
+      if (height > 100) gallery.style.height = (height + 8) + "px";
+    } catch (error) {
+      // Keep the CSS fallback height if the frame cannot be measured.
+    }
+  }
+  gallery.addEventListener("load", function () {
+    fitGallery();
+    try {
+      const doc = gallery.contentDocument;
+      if (doc && "ResizeObserver" in window) {
+        new ResizeObserver(fitGallery).observe(doc.body);
+      }
+      doc.querySelectorAll("img").forEach(img => img.addEventListener("load", fitGallery));
+    } catch(error) {}
+  });
+  window.addEventListener("resize", fitGallery);
+})();
+</script></body></html>

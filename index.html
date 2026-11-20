@@ -684,6 +684,13 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
 @media(max-width:720px){.v28-preview .v28-about-right{grid-template-columns:minmax(0,250px) minmax(0,1fr);align-items:center;gap:23px}.v28-preview .v28-about-portrait figcaption{font-size:13px}}
 @media(max-width:540px){.v28-preview .v28-about-right{grid-template-columns:1fr;max-width:470px;gap:20px}.v28-preview .v28-about-portrait{max-width:300px}}
 
+/* A second quiet, attributed values Easter egg */
+.v28-preview .v28-values-quote-stack{min-width:0}
+.v28-preview .v28-values-quote-stack .v28-values-quote{margin:0}
+.v28-preview .v28-values-fnl{font:italic 16px/1.55 Georgia,serif;color:#76585c;margin:12px 0 0!important}
+.v28-preview .v28-values-fnl span{white-space:nowrap;font:normal 11px "Segoe UI",Arial,sans-serif;color:#80736f}
+@media(max-width:720px){.v28-preview .v28-values-fnl span{white-space:normal}}
+
 /* Homepage introduction: problem-solving and people-first message (Nov 20, 2026) */
 .v28-preview .hero-bridge{margin:16px 0 3px;font-size:13px;font-weight:700;color:#f2e6dc}
 .v28-preview .hero-people-line{margin:3px 0 12px;color:#dfa8a7;font:italic 400 clamp(1.25rem,1.85vw,1.55rem)/1.4 Georgia,serif}
@@ -1036,7 +1043,10 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
   </div>
   <div class="v28-values-bottom">
    <p>Some principles have stayed with me, including the Air Force values of <strong>Integrity First, Service Before Self, and Excellence In All We Do.</strong></p>
-   <p class="v28-values-quote">“Doing the right thing is never the wrong thing.” <span>— Ted Lasso</span></p>
+   <div class="v28-values-quote-stack">
+    <p class="v28-values-quote">“Doing the right thing is never the wrong thing.” <span>— Ted Lasso</span></p>
+    <p class="v28-values-fnl">“Clear eyes, full hearts, can’t lose.” <span>— Friday Night Lights</span></p>
+   </div>
   </div>
  </div>
 </section>

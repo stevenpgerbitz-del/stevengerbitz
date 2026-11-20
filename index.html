@@ -1078,7 +1078,7 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
  </div>
 </section>
 </main>
-<footer><div class="site-width footer-content"><strong>Steven Gerbitz</strong><span>Curious by nature. Problem solver by trade.</span></div></footer>
+<footer><div class="site-width footer-content"><strong>Steven Gerbitz</strong><span id="footer-saying">Curious by nature. Problem solver by trade.</span></div></footer>
 <script>
 (()=>{
  const button=document.querySelector(".menu-btn");
@@ -1089,6 +1089,33 @@ body.v28-preview{background:#eee8dd;color:#302c2d;font-family:"Segoe UI",Arial,s
  nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",close));
  document.addEventListener("keydown",event=>{if(event.key==="Escape")close();});
  document.addEventListener("click",event=>{if(!button.contains(event.target)&&!nav.contains(event.target))close();});
+})();
+</script>
+<script>
+/* Rotate original footer sayings on each visit or refresh, without immediate repeats. */
+(function () {
+ const footer = document.getElementById('footer-saying');
+ if (!footer) return;
+ const sayings = [
+ "Made it this far? We might have a few things to talk about.",
+ "Curious by nature. Problem solver by trade.",
+ "Not every connection needs a cable.",
+ "Powered by curiosity and the occasional Diet Dr Pepper.",
+ "Thanks for stopping by. The microphone is optional.",
+ "Some assembly required. Good conversation encouraged.",
+ "There's probably a better way. I like finding it.",
+ "Still curious. Still learning. Still asking questions.",
+ "Not every good story fits on a résumé.",
+ "Somewhere, an old karaoke songbook is feeling nostalgic.",
+ "Good people. Good questions. Better solutions.",
+ "A good conversation can solve more than you think."
+];
+ let previous = '';
+ try { previous = sessionStorage.getItem('steven-footer-last') || ''; } catch (e) {}
+ const options = sayings.filter(saying => saying !== previous);
+ const saying = options[Math.floor(Math.random() * options.length)];
+ footer.textContent = saying;
+ try { sessionStorage.setItem('steven-footer-last', saying); } catch (e) {}
 })();
 </script>
 </body>
